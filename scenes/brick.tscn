@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"break",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -57,3 +57,5 @@ shape = SubResource("RectangleShape2D_5l4w1")
 sprite_frames = SubResource("SpriteFrames_0w5h4")
 animation = &"break"
 autoplay = "idle"
+frame = 1
+frame_progress = 0.89188963
