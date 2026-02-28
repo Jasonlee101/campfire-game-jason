@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cejhkiptai360"]
 
+[ext_resource type="Script" uid="uid://dyqbkv8pdiba3" path="res://scenes/brick.gd" id="1_0w5h4"]
 [ext_resource type="Texture2D" uid="uid://bth5i35laf2us" path="res://assets/sprites/world_tileset.png" id="1_5l4w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4w1"]
@@ -21,6 +22,7 @@ animations = [{
 }]
 
 [node name="Brick" type="Area2D" unique_id=104285837]
+script = ExtResource("1_0w5h4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1419718906]
 shape = SubResource("RectangleShape2D_5l4w1")
