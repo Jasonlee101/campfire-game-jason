@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dyq34ko0iq8gm" path="res://scenes/slime.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://dc6sbs4blrat1" path="res://scenes/brick.tscn" id="7_u5sy4"]
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://d1h4yaxvhi6xm" path="res://scenes/fog.tscn" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -308,51 +309,67 @@ position = Vector2(471, 64)
 
 [node name="Brick" parent="Bricks" unique_id=104285837 instance=ExtResource("7_u5sy4")]
 position = Vector2(231, -72)
+interaction_range = 50.0
 
 [node name="Brick2" parent="Bricks" unique_id=1621851373 instance=ExtResource("7_u5sy4")]
 position = Vector2(263, -72)
+interaction_range = 50.0
 
 [node name="Brick3" parent="Bricks" unique_id=1825294920 instance=ExtResource("7_u5sy4")]
 position = Vector2(247, -72)
+interaction_range = 50.0
 
 [node name="Brick4" parent="Bricks" unique_id=4482902 instance=ExtResource("7_u5sy4")]
 position = Vector2(663, 40)
+interaction_range = 50.0
 
 [node name="Brick5" parent="Bricks" unique_id=2105600613 instance=ExtResource("7_u5sy4")]
 position = Vector2(631, 40)
+interaction_range = 50.0
 
 [node name="Brick6" parent="Bricks" unique_id=125827611 instance=ExtResource("7_u5sy4")]
 position = Vector2(647, 40)
+interaction_range = 50.0
 
 [node name="Brick7" parent="Bricks" unique_id=1507609905 instance=ExtResource("7_u5sy4")]
 position = Vector2(983, 72)
+interaction_range = 50.0
 
 [node name="Brick8" parent="Bricks" unique_id=1323905918 instance=ExtResource("7_u5sy4")]
 position = Vector2(999, 72)
+interaction_range = 50.0
 
 [node name="Brick9" parent="Bricks" unique_id=967302901 instance=ExtResource("7_u5sy4")]
 position = Vector2(983, 88)
+interaction_range = 50.0
 
 [node name="Brick10" parent="Bricks" unique_id=685646804 instance=ExtResource("7_u5sy4")]
 position = Vector2(1015, 72)
+interaction_range = 50.0
 
 [node name="Brick11" parent="Bricks" unique_id=544770246 instance=ExtResource("7_u5sy4")]
 position = Vector2(999, 88)
+interaction_range = 50.0
 
 [node name="Brick12" parent="Bricks" unique_id=1671767332 instance=ExtResource("7_u5sy4")]
 position = Vector2(1014, 88)
+interaction_range = 50.0
 
 [node name="Brick13" parent="Bricks" unique_id=993482038 instance=ExtResource("7_u5sy4")]
 position = Vector2(407, 25)
+interaction_range = 50.0
 
 [node name="Brick14" parent="Bricks" unique_id=1759079730 instance=ExtResource("7_u5sy4")]
 position = Vector2(407, 9)
+interaction_range = 50.0
 
 [node name="Brick15" parent="Bricks" unique_id=1868077225 instance=ExtResource("7_u5sy4")]
 position = Vector2(407, -7)
+interaction_range = 50.0
 
 [node name="Brick16" parent="Bricks" unique_id=1595347426 instance=ExtResource("7_u5sy4")]
 position = Vector2(407, -23)
+interaction_range = 50.0
 
 [node name="Labels" type="Node" parent="." unique_id=154194728]
 
@@ -422,3 +439,6 @@ the surface"
 
 [node name="Slime" parent="." unique_id=2123944603 instance=ExtResource("6_p57ef")]
 position = Vector2(874, 64)
+
+[node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
+position = Vector2(552, 57)

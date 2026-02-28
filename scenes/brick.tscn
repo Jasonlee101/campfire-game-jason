@@ -45,6 +45,7 @@ animations = [{
 [node name="Brick" type="StaticBody2D" unique_id=1621851373]
 collision_mask = 2
 script = ExtResource("2_0w5h4")
+interaction_range = null
 
 [node name="Timer" type="Timer" parent="." unique_id=1027950470]
 wait_time = 0.5

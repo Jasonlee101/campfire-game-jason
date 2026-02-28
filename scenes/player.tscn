@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c6323f7e2ykb7" path="res://assets/sprites/knight.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cbl1485il1r71" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://dyhowmcastk7k" path="res://assets/sprites/pickaxe.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://d2w58t78sjoo1" path="res://assets/sprites/pickaxe 2.png" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -172,6 +172,55 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
 radius = 5.0
 
+[sub_resource type="Animation" id="Animation_qhqgy"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandPivot/Pickaxe:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.7853982, -1.5707964, 0.2617994]
+}
+
+[sub_resource type="Animation" id="Animation_dqkch"]
+resource_name = "swing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandPivot/Pickaxe:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.7853982, -1.3089969, 0.2617994, -0.7853982]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandPivot/Pickaxe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlg0r"]
+_data = {
+&"RESET": SubResource("Animation_qhqgy"),
+&"swing": SubResource("Animation_dqkch")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=295882371]
 z_index = 5
 collision_layer = 2
@@ -189,7 +238,12 @@ shape = SubResource("CircleShape2D_1jxqw")
 
 [node name="HandPivot" type="Node2D" parent="." unique_id=1735048373]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HandPivot" unique_id=1372682722]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_qlg0r")
+
 [node name="Pickaxe" type="Sprite2D" parent="HandPivot" unique_id=1264916389]
+z_index = 5
 position = Vector2(0, -7)
 rotation = -0.7853982
 scale = Vector2(0.65625, 0.65625)

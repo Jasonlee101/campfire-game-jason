@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1h4yaxvhi6xm"]
+
+[ext_resource type="Script" uid="uid://b0muduhb2pork" path="res://scripts/fog.gd" id="1_e072f"]
+[ext_resource type="Texture2D" uid="uid://cvm6jf64xv0bf" path="res://assets/sprites/fog.png" id="2_1o7ot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fuky"]
+size = Vector2(16, 16)
+
+[node name="fog" type="Area2D" unique_id=1504808138]
+script = ExtResource("1_e072f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1182883754]
+texture = ExtResource("2_1o7ot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1946591942]
+shape = SubResource("RectangleShape2D_8fuky")
+
+[node name="Timer" type="Timer" parent="." unique_id=47489583]
+wait_time = 0.6
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
