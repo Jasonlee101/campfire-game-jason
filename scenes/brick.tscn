@@ -17,6 +17,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4w1"]
+size = Vector2(16, 16)
+
 [node name="Area2D" type="Area2D" unique_id=1553344906]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2108949181]
@@ -24,3 +27,4 @@ sprite_frames = SubResource("SpriteFrames_0w5h4")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1278645134]
+shape = SubResource("RectangleShape2D_5l4w1")
