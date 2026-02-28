@@ -1,6 +1,16 @@
-[gd_scene format=3 uid="uid://cejhkiptai360"]
+[gd_scene format=3 uid="uid://dosebaqe3uqrg"]
 
 [ext_resource type="Texture2D" uid="uid://bth5i35laf2us" path="res://assets/sprites/world_tileset.png" id="1_5l4w1"]
+
+[sub_resource type="GDScript" id="GDScript_5l4w1"]
+script/source = "extends Area2D
+
+
+
+func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print(\"mine\")
+	queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4w1"]
 size = Vector2(16, 16)
@@ -21,11 +31,16 @@ animations = [{
 }]
 
 [node name="Brick" type="Area2D" unique_id=104285837]
+collision_mask = 2
+script = SubResource("GDScript_5l4w1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1419718906]
 shape = SubResource("RectangleShape2D_5l4w1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1943024393]
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_0w5h4")
 animation = &"idle"
 autoplay = "idle"
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
