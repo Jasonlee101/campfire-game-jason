@@ -19,7 +19,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				if player.has_method("swing_pickaxe"):
 					player.swing_pickaxe()
 				# ---------------------
-				
+					
 				timer.start()
 				animated_sprite.play('break')
 			else:
