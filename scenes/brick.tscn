@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cejhkiptai360"]
+
+[ext_resource type="Texture2D" uid="uid://bth5i35laf2us" path="res://assets/sprites/world_tileset.png" id="1_5l4w1"]
+
+[sub_resource type="GDScript" id="GDScript_5l4w1"]
+script/source = "extends Area2D
+
+
+
+func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print(\"mine\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4w1"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w5h4"]
+atlas = ExtResource("1_5l4w1")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mekc"]
+atlas = ExtResource("1_5l4w1")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c34n8"]
+atlas = ExtResource("1_5l4w1")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l4w1"]
+atlas = ExtResource("1_5l4w1")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0w5h4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w5h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mekc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c34n8")
+}],
+"loop": true,
+"name": &"break",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l4w1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Brick" type="Area2D" unique_id=104285837]
+collision_mask = 2
+script = SubResource("GDScript_5l4w1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1419718906]
+shape = SubResource("RectangleShape2D_5l4w1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1943024393]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_0w5h4")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
