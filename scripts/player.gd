@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 func _process(_delta):
 	# Make the pickaxe pivot point at mouse
 	hand_pivot.look_at(get_global_mouse_position())
-	
+
 	# Keep the pickaxe upright when aiming left
 	var mouse_pos = get_global_mouse_position()
 	if mouse_pos.x < global_position.x:
