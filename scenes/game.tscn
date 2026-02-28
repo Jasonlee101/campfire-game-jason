@@ -171,13 +171,16 @@ position = Vector2(814, 86)
 [node name="Platform5" parent="platforms" unique_id=1747113329 instance=ExtResource("3_lnu2h")]
 position = Vector2(814, 134)
 
-[node name="Node" type="Node" parent="." unique_id=1866655542]
+[node name="Enemies" type="Node" parent="." unique_id=1866655542]
 
-[node name="Slime" parent="Node" unique_id=1270955932 instance=ExtResource("6_p57ef")]
+[node name="Slime" parent="Enemies" unique_id=1270955932 instance=ExtResource("6_p57ef")]
 position = Vector2(664, 191)
 
-[node name="Slime2" parent="Node" unique_id=383236629 instance=ExtResource("6_p57ef")]
-position = Vector2(471, 64)
+[node name="Slime2" parent="Enemies" unique_id=383236629 instance=ExtResource("6_p57ef")]
+position = Vector2(474, 67)
+
+[node name="Slime3" parent="Enemies" unique_id=2123944603 instance=ExtResource("6_p57ef")]
+position = Vector2(873, 64)
 
 [node name="Bricks" type="Node" parent="." unique_id=1276646721]
 
@@ -310,9 +313,6 @@ theme_override_font_sizes/font_size = 8
 text = "Good job!
 Now go under 
 the surface"
-
-[node name="Slime" parent="." unique_id=2123944603 instance=ExtResource("6_p57ef")]
-position = Vector2(874, 64)
 
 [node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
 position = Vector2(552, 57)
