@@ -275,3 +275,6 @@ script = ExtResource("11_kvpfn")
 
 [node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
 position = Vector2(570, -247)
+
+[node name="Coin" parent="." unique_id=1565211297 instance=ExtResource("4_lbhrr")]
+position = Vector2(140, 166)
