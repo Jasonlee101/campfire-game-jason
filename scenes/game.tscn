@@ -90,7 +90,7 @@ position = Vector2(42, 299)
 shape = SubResource("WorldBoundaryShape2D_0tnpc")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone" unique_id=1438786756]
-position = Vector2(238, -240)
+position = Vector2(239, -243)
 shape = SubResource("RectangleShape2D_vtaks")
 
 [node name="Coins" type="Node" parent="." unique_id=1469722521]
@@ -209,18 +209,6 @@ theme_override_fonts/font = ExtResource("8_gee14")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump
 arrow to move"
-
-[node name="Score" type="Label" parent="Labels" unique_id=2033174677]
-unique_name_in_owner = true
-offset_left = 1002.0
-offset_top = 109.0
-offset_right = 1194.0
-offset_bottom = 134.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("8_gee14")
-theme_override_font_sizes/font_size = 10
-text = "Good job!
-Score: 0"
 
 [node name="Label2" type="Label" parent="Labels" unique_id=1364500050]
 offset_left = 129.0
