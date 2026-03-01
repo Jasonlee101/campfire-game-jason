@@ -46,16 +46,13 @@ func _physics_process(delta: float) -> void:
 func _process(_delta):
 	# Make the pickaxe pivot point at mouse
 	hand_pivot.look_at(get_global_mouse_position())
-
 	# Keep the pickaxe upright when aiming left
 	var mouse_pos = get_global_mouse_position()
+	pickaxe_sprite.play("idle")
 	if mouse_pos.x < global_position.x:
 		hand_pivot.scale.y = -1
 	else:
 		hand_pivot.scale.y = 1
 
 func swing_pickaxe():
-	# This is called by the Brick when you click it
-	if not anim_player.is_playing():
-		anim_player.play("swing")
-		
+	$HandPivot/Pickaxe.play("swing")
