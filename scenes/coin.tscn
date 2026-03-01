@@ -1,94 +1,52 @@
 [gd_scene format=3 uid="uid://cxf63ko2lr5u4"]
 
 [ext_resource type="Script" uid="uid://x6pvceyj33jj" path="res://scripts/coin.gd" id="1_i64fm"]
-[ext_resource type="Texture2D" uid="uid://cj08uc4i8jfcs" path="res://assets/sprites/coin.png" id="1_rwqht"]
+[ext_resource type="Texture2D" uid="uid://htwmd0issf2t" path="res://assets/sprites/gem.png" id="2_i64fm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0t63x"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_11l1o"]
+atlas = ExtResource("2_i64fm")
+region = Rect2(0, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7riw"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d14el"]
+atlas = ExtResource("2_i64fm")
+region = Rect2(18, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pdq0q"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ikuy"]
+atlas = ExtResource("2_i64fm")
+region = Rect2(36, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w14il"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(48, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnlwo"]
+atlas = ExtResource("2_i64fm")
+region = Rect2(54, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h4etq"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(64, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jig8b"]
+atlas = ExtResource("2_i64fm")
+region = Rect2(72, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4fra"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_te2np"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m1j4n"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(112, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v1mwu"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(128, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uf4yh"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(144, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ciu18"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(160, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybu58"]
-atlas = ExtResource("1_rwqht")
-region = Rect2(176, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmuha"]
+atlas = ExtResource("2_i64fm")
+region = Rect2(90, 0, 18, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5w7y"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0t63x")
+"texture": SubResource("AtlasTexture_11l1o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v7riw")
+"texture": SubResource("AtlasTexture_d14el")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pdq0q")
+"texture": SubResource("AtlasTexture_1ikuy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w14il")
+"texture": SubResource("AtlasTexture_wnlwo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h4etq")
+"texture": SubResource("AtlasTexture_jig8b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o4fra")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_te2np")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m1j4n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v1mwu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uf4yh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ciu18")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ybu58")
+"texture": SubResource("AtlasTexture_xmuha")
 }],
 "loop": true,
 "name": &"default",
@@ -103,6 +61,7 @@ collision_mask = 2
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2006921980]
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_s5w7y")
 autoplay = "default"
 
