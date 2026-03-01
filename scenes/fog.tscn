@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1h4yaxvhi6xm"]
 
 [ext_resource type="Script" uid="uid://b0muduhb2pork" path="res://scripts/fog.gd" id="1_e072f"]
-[ext_resource type="Texture2D" uid="uid://cvm6jf64xv0bf" path="res://assets/sprites/fog.png" id="2_1o7ot"]
+[ext_resource type="Texture2D" uid="uid://c2cjjfxmusgx" path="res://assets/sprites/fog 2.png" id="2_1o7ot"]
 [ext_resource type="PackedScene" uid="uid://bmorfmwgd5orj" path="res://scenes/killzone.tscn" id="3_1o7ot"]
 
 [sub_resource type="Animation" id="Animation_1o7ot"]
