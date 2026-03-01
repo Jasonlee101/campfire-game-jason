@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b0muduhb2pork" path="res://scripts/fog.gd" id="1_e072f"]
 [ext_resource type="Texture2D" uid="uid://cvm6jf64xv0bf" path="res://assets/sprites/fog.png" id="2_1o7ot"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fuky"]
-size = Vector2(16, 16.257256)
+[ext_resource type="PackedScene" uid="uid://bmorfmwgd5orj" path="res://scenes/killzone.tscn" id="3_1o7ot"]
 
 [sub_resource type="Animation" id="Animation_1o7ot"]
-length = 0.001
+length = 300.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,22 +13,22 @@ tracks/0/path = NodePath("Sprite2D:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 300),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 16000, 16)]
+"values": [Rect2(0, 0, 16000, 16), Rect2(0, 0, 16000, 1600)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/path = NodePath("Killzone:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 300),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0.73970485)]
+"values": [Vector2(0, 0), Vector2(0, 150)]
 }
 
 [sub_resource type="Animation" id="Animation_8fuky"]
@@ -52,7 +50,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:shape")
+tracks/1/path = NodePath("Killzone/CollisionShape2D:shape")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -64,7 +62,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/path = NodePath("Killzone/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -85,6 +83,8 @@ _data = {
 &"fog_pulse": SubResource("Animation_e072f")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8fuky"]
+
 [node name="fog" type="Area2D" unique_id=1504808138]
 scale = Vector2(10.139177, 10.139177)
 collision_mask = 2
@@ -99,17 +99,20 @@ offset = Vector2(-8000, 0)
 region_enabled = true
 region_rect = Rect2(0, 0, 16000, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1946591942]
-position = Vector2(0, 0.73970485)
-scale = Vector2(0.091, 0.091)
-shape = SubResource("RectangleShape2D_8fuky")
-
 [node name="Timer" type="Timer" parent="." unique_id=47489583]
 wait_time = 0.6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=829638321]
 libraries/ = SubResource("AnimationLibrary_1o7ot")
-autoplay = &"descend"
+autoplay = &"RESET"
+
+[node name="Killzone" parent="." unique_id=1035503713 instance=ExtResource("3_1o7ot")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1946591942]
+position = Vector2(0, 0.73970485)
+rotation = 3.1415927
+scale = Vector2(0.091, 0.091)
+shape = SubResource("WorldBoundaryShape2D_8fuky")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
