@@ -171,16 +171,16 @@ position = Vector2(814, 86)
 [node name="Platform5" parent="platforms" unique_id=1747113329 instance=ExtResource("3_lnu2h")]
 position = Vector2(814, 134)
 
-[node name="Slimes" type="Node" parent="." unique_id=1866655542]
+[node name="Enemies" type="Node" parent="." unique_id=1866655542]
 
-[node name="Slime" parent="Slimes" unique_id=1270955932 instance=ExtResource("6_p57ef")]
+[node name="Slime" parent="Enemies" unique_id=1270955932 instance=ExtResource("6_p57ef")]
 position = Vector2(664, 191)
 
-[node name="Slime2" parent="Slimes" unique_id=383236629 instance=ExtResource("6_p57ef")]
-position = Vector2(471, 64)
+[node name="Slime2" parent="Enemies" unique_id=383236629 instance=ExtResource("6_p57ef")]
+position = Vector2(474, 67)
 
-[node name="Slime" parent="." unique_id=2123944603 instance=ExtResource("6_p57ef")]
-position = Vector2(874, 64)
+[node name="Slime3" parent="Enemies" unique_id=2123944603 instance=ExtResource("6_p57ef")]
+position = Vector2(873, 64)
 
 [node name="Bricks" type="Node" parent="." unique_id=1276646721]
 
@@ -251,10 +251,10 @@ interaction_range = 50.0
 [node name="Labels" type="Node" parent="." unique_id=154194728]
 
 [node name="Label" type="Label" parent="Labels" unique_id=1183230142]
-offset_left = -5.0
-offset_top = -141.0
-offset_right = 187.0
-offset_bottom = -122.0
+offset_left = 6.0
+offset_top = -156.0
+offset_right = 198.0
+offset_bottom = -137.0
 theme_override_colors/font_color = Color(0.007843138, 0.14901961, 0.34901962, 1)
 theme_override_fonts/font = ExtResource("8_gee14")
 theme_override_font_sizes/font_size = 8
@@ -315,4 +315,4 @@ Now go under
 the surface"
 
 [node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
-position = Vector2(-4, -157)
+position = Vector2(552, 57)

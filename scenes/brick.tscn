@@ -66,7 +66,6 @@ animations = [{
 [node name="Brick" type="StaticBody2D" unique_id=1621851373]
 collision_mask = 2
 script = ExtResource("2_0w5h4")
-interaction_range = null
 
 [node name="Timer" type="Timer" parent="." unique_id=1027950470]
 wait_time = 0.5
@@ -76,7 +75,7 @@ shape = SubResource("RectangleShape2D_5l4w1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1829214577]
 sprite_frames = SubResource("SpriteFrames_7mekc")
-animation = &"break"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=575799390]
