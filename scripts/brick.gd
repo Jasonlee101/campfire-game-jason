@@ -25,6 +25,5 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				print("Too far!")
 
 func _on_timer_timeout() -> void:
-	print(health)
 	if health <= 0:
 		queue_free()
