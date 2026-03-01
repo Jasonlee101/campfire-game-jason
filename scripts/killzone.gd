@@ -5,7 +5,6 @@ extends Area2D
 func _on_body_entered(body):
 		
 	Engine.time_scale = 0.5
-	body.get_node('CollisionShape2D').queue_free()
 	var death = body.dead
 	body.dead = true
 	var anim = body.get_node("AnimatedSprite2D")
