@@ -5,9 +5,7 @@ extends StaticBody2D
 
 @export var interaction_range: float = 50.0
 @onready var player = get_tree().get_first_node_in_group('player')
-
-func _on_ready() -> void:
-	print("I'm a brick")
+var health = 3
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	# Use the 'event' parameter for better mouse detection
@@ -23,4 +21,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 				print("Too far!")
 
 func _on_timer_timeout() -> void:
-	queue_free()
+	health -= 1 
+	if health <= 0:
+		queue_free()
