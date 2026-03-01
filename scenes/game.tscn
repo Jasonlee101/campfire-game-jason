@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dc6sbs4blrat1" path="res://scenes/brick.tscn" id="7_u5sy4"]
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://d1h4yaxvhi6xm" path="res://scenes/fog.tscn" id="10_vtaks"]
-[ext_resource type="Script" uid="uid://c0d1lq5i4mg7m" path="res://scripts/scorelabel.gd" id="11_kvpfn"]
+[ext_resource type="Script" path="res://scripts/scorelabel.gd" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvpfn"]
 texture = ExtResource("2_vtaks")
@@ -115,8 +115,9 @@ position = Vector2(57, -102)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=670757176]
 position = Vector2(0, -5)
 zoom = Vector2(4, 4)
-limit_left = -1000000000
-limit_right = 10000001
+limit_left = 0
+limit_top = -180
+limit_right = 9999824
 limit_bottom = 240
 position_smoothing_enabled = true
 
@@ -309,15 +310,16 @@ Now go under
 the surface"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Labels" unique_id=963411176]
+follow_viewport_enabled = true
 
 [node name="ScoreLabel" type="Label" parent="Labels/CanvasLayer" unique_id=1532474103]
 z_index = 20
-offset_left = -67.0
-offset_top = -131.0
-offset_right = 2.0
-offset_bottom = -101.0
+offset_left = 8.0
+offset_top = -157.0
+offset_right = 77.0
+offset_bottom = -127.0
 text = "score"
 script = ExtResource("11_kvpfn")
 
 [node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
-position = Vector2(569, -185)
+position = Vector2(743, -179.99998)
