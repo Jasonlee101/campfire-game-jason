@@ -21,7 +21,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("mine"):
 		pickaxe_sprite.play("swing")
-		timer.start()
+		await get_tree().create_timer(0.34).timeout
+		pickaxe_sprite.play("idle")
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
 	
@@ -56,7 +57,3 @@ func _process(_delta):
 	else:
 		hand_pivot.scale.y = 1
 		
-
-
-func _on_timer_timseout() -> void:
-	print("stop")

@@ -184,7 +184,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"swing",
-"speed": 12.0
+"speed": 18.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=295882371]
@@ -208,9 +208,5 @@ shape = SubResource("CircleShape2D_1jxqw")
 position = Vector2(6, -8)
 scale = Vector2(0.65625006, 0.65625006)
 sprite_frames = SubResource("SpriteFrames_4ni07")
-animation = &"idle"
+animation = &"swing"
 autoplay = "idle"
-
-[node name="Timer" type="Timer" parent="." unique_id=1190933441]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
