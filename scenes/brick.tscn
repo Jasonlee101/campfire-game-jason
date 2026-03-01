@@ -75,8 +75,10 @@ shape = SubResource("RectangleShape2D_5l4w1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1829214577]
 sprite_frames = SubResource("SpriteFrames_7mekc")
-animation = &"idle"
+animation = &"break"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=575799390]
 

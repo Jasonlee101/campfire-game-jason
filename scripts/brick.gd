@@ -11,7 +11,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if player == null:
 			player = get_tree().get_first_node_in_group("player")
-		
 		if player != null:
 			var distance = global_position.distance_to(player.global_position)
 			if distance <= interaction_range:
