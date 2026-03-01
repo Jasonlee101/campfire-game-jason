@@ -16,6 +16,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			var distance = global_position.distance_to(player.global_position)
 			if distance <= interaction_range:
 				timer.start()
+				animated_sprite.play('break')
 			else:
 				print("Too far!")
 
