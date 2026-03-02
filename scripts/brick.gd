@@ -15,8 +15,9 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		if player != null:
 			var distance = global_position.distance_to(player.global_position)
 			if distance <= interaction_range:
-				timer.start()
-				health -= 1 
+				if health >= 1:
+					timer.start()
+					health -= 1 
 
 func _process(_delta: float) -> void:
 	if self.health >= 1:
