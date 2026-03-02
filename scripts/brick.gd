@@ -21,8 +21,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 					animated_sprite.play(str(health))
 				else:
 					animated_sprite.play('break')
-			else:
-				print("Too far!")
 
 func _on_timer_timeout() -> void:
 	if health <= 0:

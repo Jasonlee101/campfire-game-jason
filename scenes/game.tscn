@@ -120,7 +120,7 @@ shape = SubResource("RectangleShape2D_kvpfn")
 [node name="Coins" type="Node" parent="." unique_id=1469722521]
 
 [node name="Coin" parent="Coins" unique_id=1032078497 instance=ExtResource("4_lbhrr")]
-position = Vector2(487, 276)
+position = Vector2(487, 265)
 
 [node name="Coin2" parent="Coins" unique_id=2077521883 instance=ExtResource("4_lbhrr")]
 position = Vector2(359, 6)
@@ -212,7 +212,7 @@ position = Vector2(190, 147)
 [node name="Platforms" type="Node" parent="." unique_id=1061163467]
 
 [node name="Platform4" parent="Platforms" unique_id=1548542220 instance=ExtResource("3_lnu2h")]
-position = Vector2(239, 80)
+position = Vector2(239, 79)
 
 [node name="Platform5" parent="Platforms" unique_id=1747113329 instance=ExtResource("3_lnu2h")]
 position = Vector2(239, 122)
@@ -576,6 +576,8 @@ and sound back
 in your mole hole!"
 
 [node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
+visibility_layer = 2
+z_index = 2
 position = Vector2(569, -330)
 
 [node name="Boundries" type="Node" parent="." unique_id=317817920]
