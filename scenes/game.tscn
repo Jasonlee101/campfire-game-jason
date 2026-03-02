@@ -457,7 +457,6 @@ position = Vector2(583, 1160)
 [node name="Labels" type="Node" parent="." unique_id=154194728]
 
 [node name="Label11" type="Label" parent="Labels" unique_id=729190213]
-visible = false
 offset_left = 706.0
 offset_top = 408.0
 offset_right = 961.0
@@ -471,7 +470,6 @@ down from the
 surface!"
 
 [node name="Label" type="Label" parent="Labels" unique_id=1183230142]
-visible = false
 offset_left = 56.0
 offset_top = 112.0
 offset_right = 156.0
@@ -484,7 +482,6 @@ Arrow keys
 to move"
 
 [node name="Label3" type="Label" parent="Labels" unique_id=1368980580]
-visible = false
 offset_left = 50.0
 offset_top = 188.0
 offset_right = 161.0
@@ -496,7 +493,6 @@ text = "Let's visit the
 world above!"
 
 [node name="Label4" type="Label" parent="Labels" unique_id=1541918726]
-visible = false
 offset_left = 453.0
 offset_top = 519.0
 offset_right = 708.0
@@ -507,7 +503,6 @@ theme_override_font_sizes/font_size = 8
 text = "Avoid enemies!"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Labels" unique_id=963411176]
-visible = false
 
 [node name="ScoreLabel" type="Label" parent="Labels/CanvasLayer" unique_id=1532474103]
 z_index = 20
@@ -521,7 +516,6 @@ text = "score"
 script = ExtResource("11_kvpfn")
 
 [node name="Label7" type="Label" parent="Labels" unique_id=526102087]
-visible = false
 offset_left = 201.0
 offset_top = -131.0
 offset_right = 367.0
@@ -538,7 +532,6 @@ Quick! Back under the
 surface!"
 
 [node name="Label8" type="Label" parent="Labels" unique_id=1558709458]
-visible = false
 offset_left = 395.0
 offset_top = 57.0
 offset_right = 650.0
@@ -550,7 +543,6 @@ text = "The old mole caves
 are blocked with rocks"
 
 [node name="Label9" type="Label" parent="Labels" unique_id=1541973780]
-visible = false
 offset_left = 446.0
 offset_top = 335.0
 offset_right = 701.0
@@ -561,7 +553,6 @@ theme_override_font_sizes/font_size = 8
 text = "Spikes hurt!"
 
 [node name="Label10" type="Label" parent="Labels" unique_id=411919771]
-visible = false
 offset_left = 395.0
 offset_top = 172.0
 offset_right = 650.0
@@ -573,7 +564,6 @@ text = "Tap weak rocks to
 break them"
 
 [node name="Label5" type="Label" parent="Labels" unique_id=1232368600]
-visible = false
 offset_left = 534.0
 offset_top = 1476.0
 offset_right = 789.0
