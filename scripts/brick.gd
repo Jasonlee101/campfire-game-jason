@@ -5,6 +5,7 @@ extends StaticBody2D
 
 @export var interaction_range: float = 50.0
 @onready var player = get_tree().get_first_node_in_group('player')
+@onready var collision_shape = $CollisionShape2D
 var health = 3
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -20,11 +21,14 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 					health -= 1 
 
 func _process(_delta: float):
-	if self.health >= 1:
+	if health >= 1:
 		animated_sprite.play(str(health))
 	else:
 		animated_sprite.play('break')
-	
+		if collision_shape:                 # node still exists
+			collision_shape.queue_free()    # free it
+			collision_shape = null 
+
 func _on_timer_timeout() -> void:
 	if health <= 0:
 		queue_free()
