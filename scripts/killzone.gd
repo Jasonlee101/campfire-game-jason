@@ -7,6 +7,7 @@ func _on_body_entered(body):
 	var death = body.dead
 	body.dead = true
 	var anim = body.get_node("AnimatedSprite2D")
+	body.velocity.y = -300.0
 	anim.play("death")  
 	timer.start()
 

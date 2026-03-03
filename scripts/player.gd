@@ -12,7 +12,7 @@ var swinging = false
 @onready var anim_player = $HandPivot/AnimationPlayer
 @onready var timer = $Timer
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
