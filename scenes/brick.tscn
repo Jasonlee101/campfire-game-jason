@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://chcf24b8a1vuu" path="res://scripts/brick.gd" id="2_0w5h4"]
 [ext_resource type="Texture2D" uid="uid://fxuaa6q4ywjb" path="res://assets/sprites/Tilesheet.png" id="2_7mekc"]
+[ext_resource type="AudioStream" uid="uid://5n72javh0m0k" path="res://assets/sounds/tap.wav" id="3_7mekc"]
+[ext_resource type="AudioStream" uid="uid://3v3e6irr62tx" path="res://assets/sounds/hurt.wav" id="4_c34n8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4w1"]
 size = Vector2(16, 16)
@@ -73,12 +75,131 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w5h4"]
 
+[sub_resource type="Animation" id="Animation_c34n8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BreakSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D:disable_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ci8dj"]
+resource_name = "break"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00064563006),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0013363957),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BreakSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0018832712),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.23493421),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Area2D:disable_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.008077663),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7yom"]
+_data = {
+&"RESET": SubResource("Animation_c34n8"),
+&"break": SubResource("Animation_ci8dj")
+}
+
 [node name="Brick" type="StaticBody2D" unique_id=1621851373]
 collision_mask = 2
 script = ExtResource("2_0w5h4")
-
-[node name="Timer" type="Timer" parent="." unique_id=1027950470]
-wait_time = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=977438496]
 shape = SubResource("RectangleShape2D_5l4w1")
@@ -93,11 +214,20 @@ autoplay = "3"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1293319798]
 shape = SubResource("RectangleShape2D_0w5h4")
 
+[node name="TapSound" type="AudioStreamPlayer2D" parent="." unique_id=549434058]
+stream = ExtResource("3_7mekc")
+volume_db = 8.0
+
+[node name="BreakSound" type="AudioStreamPlayer2D" parent="." unique_id=942988150]
+stream = ExtResource("4_c34n8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1854663595]
+libraries/ = SubResource("AnimationLibrary_x7yom")
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="ready" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_ready"]
 [connection signal="tree_entered" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_tree_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

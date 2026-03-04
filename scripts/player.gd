@@ -12,6 +12,7 @@ var direction = 0
 @onready var pickaxe_sprite = $HandPivot/Pickaxe
 @onready var anim_player = $HandPivot/AnimationPlayer
 @onready var timer = $Timer
+@onready var jump_sound = $JumpSound
 
 func _physics_process(delta: float):
 	
@@ -21,6 +22,7 @@ func _physics_process(delta: float):
 	if not dead:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			jump_sound.play()
 		if Input.is_action_just_pressed("mine"):
 			pickaxe_sprite.play("swing")
 			await get_tree().create_timer(0.34).timeout
