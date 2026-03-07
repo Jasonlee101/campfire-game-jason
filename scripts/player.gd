@@ -19,13 +19,6 @@ func _physics_process(delta: float):
 		velocity.y += gravity * delta
 
 	if not dead:
-		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-			jump_sound.play()
-		if Input.is_action_just_pressed("mine"):
-			pickaxe_sprite.play("swing")
-			await get_tree().create_timer(0.34).timeout
-			pickaxe_sprite.play("idle")
 		direction = Input.get_axis("move_left", "move_right")
 		
 		if direction > 0:
@@ -47,10 +40,25 @@ func _physics_process(delta: float):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
 
-func _process(_delta):
-	hand_pivot.look_at(get_global_mouse_position()) 	# Make the pickaxe pivot point at mouse
+func _unhandled_input(event: InputEvent) -> void:
+	if dead: return
 	
-	var mouse_pos = get_global_mouse_position() 	# Keep the pickaxe upright when aiming left
+	if event.is_action_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
+		
+	if event.is_action_pressed("mine"):
+		_perform_swing()
+
+func _perform_swing():
+	pickaxe_sprite.play("swing")
+	await get_tree().create_timer(0.34).timeout
+	pickaxe_sprite.play("idle")
+
+func _process(_delta):
+	hand_pivot.look_at(get_global_mouse_position()) 
+	# Keep the pickaxe upright when aiming left
+	var mouse_pos = get_global_mouse_position() 
 	if mouse_pos.x < global_position.x:
 		hand_pivot.scale.y = -1
 	else:
