@@ -17,7 +17,7 @@ texture = ExtResource("2_mhnvy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1426685451]
 position = Vector2(1, 1)
-zoom = Vector2(4, 4)
+zoom = Vector2(2.5, 2.5)
 
 [node name="Label" type="Label" parent="." unique_id=800731577]
 layout_mode = 0

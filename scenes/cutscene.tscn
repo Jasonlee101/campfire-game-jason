@@ -1,29 +1,33 @@
 [gd_scene format=3 uid="uid://bewum1vrw0lc8"]
 
-[sub_resource type="Animation" id="Animation_l8ll4"]
-resource_name = "Intro"
+[ext_resource type="Script" uid="uid://b5dh5w0job15c" path="res://scripts/cutscene.gd" id="1_edmg7"]
+[ext_resource type="Texture2D" uid="uid://b72xntlrt74qq" path="res://assets/sprites/cutscene/Screen 1.png" id="2_fs8wb"]
+[ext_resource type="Texture2D" uid="uid://d3oc558h1l7i3" path="res://assets/sprites/cutscene/Screen 2.png" id="3_bb0yx"]
+[ext_resource type="Texture2D" uid="uid://du45pndfqdbch" path="res://assets/sprites/cutscene/Screen 3.png" id="4_3ptll"]
+[ext_resource type="Texture2D" uid="uid://dkxcxetcwmitm" path="res://assets/sprites/cutscene/Screen 4.png" id="5_d18fx"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_edmg7"]
-_data = {
-&"Intro": SubResource("Animation_l8ll4")
-}
-
-[node name="Cutscene" type="Control" unique_id=261272120]
+[node name="cutscene" type="Control" unique_id=521590543]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_edmg7")
+slides = Array[Texture2D]([ExtResource("2_fs8wb"), ExtResource("3_bb0yx"), ExtResource("4_3ptll"), ExtResource("5_d18fx")])
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=589859309]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=92984144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Label" type="Label" parent="." unique_id=550420333]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Timer" type="Timer" parent="." unique_id=1906174687]
+wait_time = 5.0
+one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1062224465]
-libraries/ = SubResource("AnimationLibrary_edmg7")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2002365899]
+offset = Vector2(20, 20)
+zoom = Vector2(40, 40)
