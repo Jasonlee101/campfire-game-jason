@@ -23,13 +23,16 @@ func _ready() -> void:
 func _on_menu_dismissed() -> void:
 	if game_started: return
 	game_started = true
-	print("Bootstrap: Signal recieved! Loading Cutscene...")
+	await SceneTransition.fade_out()
+	
 	if is_instance_valid(menu_instance):		
 		menu_instance.queue_free()
+		
 	cutscene_instance = cutscene_scene.instantiate()
 	add_child(cutscene_instance)
-	
 	cutscene_instance.finished.connect(_on_cutscene_finished)
+	
+	SceneTransition.fade_in()
 	
 func _on_cutscene_finished() -> void:
 	print("cutscene finished") 
