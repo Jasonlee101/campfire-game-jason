@@ -1,8 +1,12 @@
-extends Area2D
+extends Area2D # Must be Area2D
 @onready var anim_player = $AnimationPlayer
 
 func _ready() -> void:
-	if Global.fog_save_offset != 0.0:
-	# Seek the animation to the exact timestamp where the player saved
-		anim_player.play("fog down")
+	# 1. Start the movement animation
+	anim_player.play("fog down")
+	
+	# 2. If a checkpoint was saved, "Seek" to that exact second
+	if Global.fog_save_offset > 0:
+		# The 'true' argument tells Godot to update the physics/visuals immediately
 		anim_player.seek(Global.fog_save_offset, true)
+		print("Fog: Restored to animation time ", Global.fog_save_offset)

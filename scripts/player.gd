@@ -16,7 +16,7 @@ var direction = 0
 
 func _ready() -> void:
 	# If we have a saved checkpoint position, move the player there immediately
-	if Global.last_checkpoint_pos != Vector2.ZERO:
+	if Global.has_checkpoint:
 		global_position = Global.last_checkpoint_pos
 
 func _physics_process(delta: float):

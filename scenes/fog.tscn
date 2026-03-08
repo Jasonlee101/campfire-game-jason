@@ -67,7 +67,7 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8fuky"]
 
-[node name="fog" type="Area2D" unique_id=1504808138]
+[node name="fog" type="Area2D" unique_id=1504808138 groups=["fog"]]
 top_level = true
 scale = Vector2(10.139177, 10.139177)
 collision_mask = 2
