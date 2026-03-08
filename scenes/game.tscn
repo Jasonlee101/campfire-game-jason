@@ -826,7 +826,7 @@ shape = SubResource("WorldBoundaryShape2D_kvpfn")
 position = Vector2(435, -248.99997)
 
 [node name="Bat" parent="." unique_id=1186418415 instance=ExtResource("11_dinhu")]
-position = Vector2(437, 137)
+position = Vector2(140, 140)
 
 [node name="Checkpoint" parent="." unique_id=189361673 instance=ExtResource("4_kvuet")]
-position = Vector2(370, 143)
+position = Vector2(218, 143)

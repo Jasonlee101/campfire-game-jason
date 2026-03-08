@@ -11,11 +11,10 @@ var game_started = false
 func _ready() -> void:
 	var mute_btn = preload("res://scenes/mute.tscn")
 	add_child(mute_btn)
-	Global.get("has_finished_intro")
+	
 	if Global.has_finished_intro:
 		load_game_directly()
 	else:
-		print("Game started, loading title screen...") 
 		menu_instance = menu_scene.instantiate() 
 		add_child(menu_instance) 
 		menu_instance.menu_dismissed.connect(_on_menu_dismissed)
@@ -35,7 +34,6 @@ func _on_menu_dismissed() -> void:
 	SceneTransition.fade_in()
 	
 func _on_cutscene_finished() -> void:
-	print("cutscene finished") 
 	Global.has_finished_intro = true
 	
 	if is_instance_valid(cutscene_instance): 
@@ -46,4 +44,3 @@ func _on_cutscene_finished() -> void:
 func load_game_directly() -> void:
 	var game_node = game_scene.instantiate() 
 	add_child(game_node) 
-	print("loading game")
