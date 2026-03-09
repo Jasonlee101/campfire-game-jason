@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bl0echg17budi"]
 
 [ext_resource type="Script" uid="uid://dyhg7858ieymp" path="res://scripts/mute.gd" id="1_2ef0y"]
-[ext_resource type="Texture2D" uid="uid://u3g612rkola3" path="res://assets/sprites/mute symbols/unmute.png" id="2_2ef0y"]
-[ext_resource type="Texture2D" uid="uid://br0btpkiovvwn" path="res://assets/sprites/mute symbols/mute.png" id="3_dped1"]
+[ext_resource type="Texture2D" uid="uid://u3g612rkola3" path="res://assets/sprites/Mute/Unmute.png" id="2_2ef0y"]
+[ext_resource type="Texture2D" uid="uid://br0btpkiovvwn" path="res://assets/sprites/Mute/Mute.png" id="3_dped1"]
 
 [node name="mute" type="CanvasLayer" unique_id=1213583261]
 layer = 100
@@ -12,9 +12,9 @@ script = ExtResource("1_2ef0y")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1518.0
+offset_left = -1520.0
 offset_top = 2.0
-offset_right = -1478.0
+offset_right = -1480.0
 offset_bottom = 34.0
 grow_horizontal = 0
 focus_mode = 0

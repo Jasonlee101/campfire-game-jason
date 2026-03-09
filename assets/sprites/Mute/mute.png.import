@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u3g612rkola3"
-path="res://.godot/imported/unmute.png-e841dcbb2ea5109ef9dd8e033c1c0c67.ctex"
+uid="uid://br0btpkiovvwn"
+path="res://.godot/imported/Mute.png-ed65d3b28998ed9893311106019df86b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mute symbols/unmute.png"
-dest_files=["res://.godot/imported/unmute.png-e841dcbb2ea5109ef9dd8e033c1c0c67.ctex"]
+source_file="res://assets/sprites/Mute/Mute.png"
+dest_files=["res://.godot/imported/Mute.png-ed65d3b28998ed9893311106019df86b.ctex"]
 
 [params]
 
