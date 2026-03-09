@@ -830,4 +830,4 @@ position = Vector2(435, -248.99997)
 position = Vector2(556, 143)
 
 [node name="Checkpoint" parent="." unique_id=189361673 instance=ExtResource("4_kvuet")]
-position = Vector2(112, 153)
+position = Vector2(122, 153)
