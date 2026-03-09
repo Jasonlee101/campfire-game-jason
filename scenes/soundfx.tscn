@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dlpvbfgyga54y"]
+
+[ext_resource type="AudioStream" uid="uid://c0uv26q03har4" path="res://assets/sounds/click.wav" id="1_wgw4s"]
+[ext_resource type="Script" uid="uid://ccj55hi727h8o" path="res://scripts/soundfx.gd" id="2_ecxqa"]
+
+[node name="soundfx" type="AudioStreamPlayer" unique_id=2013038797]
+stream = ExtResource("1_wgw4s")
+script = ExtResource("2_ecxqa")
