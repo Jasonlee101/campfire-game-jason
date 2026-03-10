@@ -171,7 +171,7 @@ layer_2/name = "Fore"
 layer_2/z_index = 6
 
 [node name="Player" parent="." unique_id=295882371 instance=ExtResource("1_uwrxv")]
-position = Vector2(378, 146)
+position = Vector2(615, 441)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=670757176]
 position = Vector2(0, -5)
@@ -831,4 +831,4 @@ position = Vector2(556, 143)
 
 [node name="Checkpoint" parent="." unique_id=189361673 instance=ExtResource("4_kvuet")]
 z_index = 2
-position = Vector2(438, 137)
+position = Vector2(670, 441)

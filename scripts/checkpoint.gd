@@ -32,30 +32,35 @@ func activate_checkpoint():
 		var safe_time = current_time
 		
 		# SETTINGS
-		var min_safe_distance = 500.0 # Pixels of gap required
-		var time_step = 0.1           # How many seconds to jump back per check
-		
-		# Get the track index for the Killzone's position
-		# (In your fog.tscn, this was track 1)
+		var min_safe_distance = 250.0 # Increase this for a bigger gap
+		var time_step = 0.1
 		var track_idx = anim.find_track("Killzone:position", Animation.TYPE_VALUE)
 		
-		# LOOP: Keep rewinding time until the distance is safe
-		# We use max(0.0, ...) to ensure we don't rewind before the start of the game
+		# We use the fog's global Y as the starting point
+		var fog_base_y = fog_node.global_position.y
+		
+		# LOOP: Keep rewinding
 		while safe_time > 0.0:
-			# Sample the animation to see where the Killzone would be at 'safe_time'
-			var fog_pos_at_time = anim.value_track_interpolate(track_idx, safe_time)
+			# Get the local Y from the animation
+			var local_fog_pos = anim.value_track_interpolate(track_idx, safe_time)
 			
-			# Calculate the vertical distance
-			# Note: We compare against the checkpoint's Y
-			var dist_y = abs(global_position.y - (fog_node.global_position.y + fog_pos_at_time.y))
+			# Calculate the actual Global Y of the killzone
+			# Note: We multiply by global_scale.y if your fog node is scaled!
+			var global_killzone_y = fog_base_y + (local_fog_pos.y * fog_node.global_scale.y)
+			
+			# How far is the checkpoint from the killing edge?
+			var dist_y = abs(global_position.y - global_killzone_y)
 			
 			if dist_y >= min_safe_distance:
-				break # The distance is now safe!
+				break
 				
 			safe_time -= time_step
-			
-		Global.fog_save_offset = safe_time
-		print("Checkpoint: Fog safety rewind applied. New save time: ", safe_time)
+		
+		# FINAL SAFETY: Rewind an extra 0.5 seconds just to be sure 
+		# the player isn't staring right at the fog edge on spawn.
+		Global.fog_save_offset = max(0.0, safe_time - 0.5)
+		
+		print("Fog distance at save: ", abs(global_position.y - (fog_base_y + (anim.value_track_interpolate(track_idx, Global.fog_save_offset).y * fog_node.global_scale.y))))
 
 	animated_sprite.play("activating")
 
