@@ -131,7 +131,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
 radius = 7.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
 atlas = ExtResource("4_dqkch")
 region = Rect2(31, 11, 1, 1)
 
@@ -155,19 +155,11 @@ region = Rect2(48, 0, 16, 16)
 atlas = ExtResource("5_tuyoq")
 region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
-atlas = ExtResource("5_tuyoq")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
-atlas = ExtResource("4_dqkch")
-region = Rect2(31, 11, 1, 1)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_dt7fs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wqfne")
+"texture": SubResource("AtlasTexture_dt7fs")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ni07")
@@ -185,14 +177,11 @@ animations = [{
 "texture": SubResource("AtlasTexture_31cv2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pf23h")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_dt7fs")
 }],
 "loop": false,
 "name": &"click",
-"speed": 30.0
+"speed": 20.0
 }, {
 "frames": [],
 "loop": false,
@@ -266,7 +255,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=549937233]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"death"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265038417 groups=["player"]]
@@ -279,6 +268,8 @@ z_index = 10
 sprite_frames = SubResource("SpriteFrames_dt7fs")
 animation = &"click"
 autoplay = "idle"
+frame = 6
+frame_progress = 1.0
 
 [node name="HandPivot" type="Node2D" parent="." unique_id=1735048373]
 

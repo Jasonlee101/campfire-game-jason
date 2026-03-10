@@ -3,7 +3,7 @@ extends Area2D
 @onready var timer = $Timer
 
 func _on_body_entered(body):
-	var death = body.dead
+	var death = body.dead 
 	var anim = body.get_node("AnimatedSprite2D")
 	
 	Engine.time_scale = 0.5
