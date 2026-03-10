@@ -46,7 +46,6 @@ func _physics_process(delta: float):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
-	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if dead: return

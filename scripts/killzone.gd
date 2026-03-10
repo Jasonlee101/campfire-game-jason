@@ -6,16 +6,18 @@ func _on_body_entered(body):
 	var death = body.dead 
 	var anim = body.get_node("AnimatedSprite2D")
 	
-	Engine.time_scale = 0.5
 	body.dead = true
-	body.velocity.y = -300.0
-	
-	if body.animated_sprite.flip_h:
-		body.direction = 1 
-	else:
+
+	if body.global_position.x < global_position.x:
 		body.direction = -1 
+	else:
+		body.direction = 1 
+		
+	body.velocity.y = -300.0
 	body.velocity.x = -200
 	
+	Engine.time_scale = 0.5
+	body.dead = true
 	anim.play("death")  
 	death_sound.play()
 	timer.start()
