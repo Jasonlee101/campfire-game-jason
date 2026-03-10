@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d2w58t78sjoo1" path="res://assets/sprites/pickaxe.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://b7y7lv43jx0af" path="res://assets/sprites/Pickaxe_animation.png" id="4_dqkch"]
 [ext_resource type="AudioStream" uid="uid://cy2acuuy1awl8" path="res://assets/sounds/jump.wav" id="5_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cvgu4dbwvx48d" path="res://assets/sprites/Click.png" id="5_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("2_qhqgy")
@@ -130,6 +131,75 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
 radius = 7.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(31, 11, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("5_tuyoq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
+atlas = ExtResource("5_tuyoq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
+atlas = ExtResource("5_tuyoq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
+atlas = ExtResource("5_tuyoq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+atlas = ExtResource("5_tuyoq")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
+atlas = ExtResource("5_tuyoq")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(31, 11, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dt7fs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqfne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l71n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke2ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujl30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31cv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf23h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt7fs")
+}],
+"loop": false,
+"name": &"click",
+"speed": 30.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
 atlas = ExtResource("4_dqkch")
 region = Rect2(0, 0, 16, 16)
@@ -202,6 +272,13 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265038417 groups=["player"]]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_1jxqw")
+
+[node name="Click" type="AnimatedSprite2D" parent="." unique_id=1572793530]
+top_level = true
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_dt7fs")
+animation = &"click"
+autoplay = "idle"
 
 [node name="HandPivot" type="Node2D" parent="." unique_id=1735048373]
 

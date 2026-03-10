@@ -13,8 +13,10 @@ var direction = 0
 @onready var anim_player = $HandPivot/AnimationPlayer
 @onready var timer = $Timer
 @onready var jump_sound = $JumpSound
+@onready var click = $Click
 
 func _ready() -> void:
+	click.top_level = true
 	# If we have a saved checkpoint position, move the player there immediately
 	if Global.has_checkpoint:
 		global_position = Global.last_checkpoint_pos
@@ -44,6 +46,7 @@ func _physics_process(delta: float):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if dead: return
@@ -53,6 +56,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		jump_sound.play()
 
 	if event.is_action_pressed("mine"):
+		click_animation()
 		_perform_swing()
 
 func _perform_swing():
@@ -61,6 +65,9 @@ func _perform_swing():
 	pickaxe_sprite.play("idle")
 
 func _process(_delta):
+	
+	click.global_position = get_global_mouse_position()
+	
 	hand_pivot.look_at(get_global_mouse_position()) 
 	# Keep the pickaxe upright when aiming left
 	var mouse_pos = get_global_mouse_position() 
@@ -68,3 +75,8 @@ func _process(_delta):
 		hand_pivot.scale.y = -1
 	else:
 		hand_pivot.scale.y = 1
+
+func click_animation():
+		click.play("click")
+		await get_tree().create_timer(0.6).timeout
+		click.play("idle")
