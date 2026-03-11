@@ -55,7 +55,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		jump_sound.play()
 
 	if event.is_action_pressed("mine"):
-		click_animation()
 		_perform_swing()
 
 	if event.is_action_pressed("minex"):
@@ -67,9 +66,6 @@ func _perform_swing():
 	pickaxe_sprite.play("idle")
 
 func _process(_delta):
-	
-	click.global_position = get_global_mouse_position()
-	
 	hand_pivot.look_at(get_global_mouse_position()) 
 	# Keep the pickaxe upright when aiming left
 	var mouse_pos = get_global_mouse_position() 
@@ -79,8 +75,13 @@ func _process(_delta):
 		hand_pivot.scale.y = 1
 
 func click_animation():
+	if $MineRay.is_colliding():
+		click.global_position = $MineRay.get_collision_point()
+	else:
+		click.global_position = get_global_mouse_position()
+		
 	click.play("click")
-	await get_tree().create_timer(0.6).timeout
+	await click.animation_finished
 	click.play("idle")
 
 func _handle_directional_mining():
@@ -102,6 +103,7 @@ func _handle_directional_mining():
 	# 3. Force the RayCast to update immediately so it doesn't wait for the next frame
 	$MineRay.force_raycast_update()
 
+	click_animation()
 	_perform_swing()  # Your existing swing animation
 
 	if $MineRay.is_colliding():

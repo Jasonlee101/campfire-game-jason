@@ -11,7 +11,6 @@ var health = 3
 @export var interaction_range: float = 30.0
 @onready var player = get_tree().get_first_node_in_group('player')
 
-
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	# Use the 'event' parameter for better mouse detection
 	if event is InputEventMouseButton and Input.is_action_just_pressed("mine") and event.pressed:
@@ -22,6 +21,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 				var distance = global_position.distance_to(player.global_position)
 				if distance <= interaction_range:
 					if player.has_method("click_animation"):
+						player.click.global_position = get_global_mouse_position()
 						player.click_animation()
 					take_damage()
 
