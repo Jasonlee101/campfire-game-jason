@@ -171,7 +171,7 @@ layer_2/name = "Fore"
 layer_2/z_index = 6
 
 [node name="Player" parent="." unique_id=295882371 instance=ExtResource("1_uwrxv")]
-position = Vector2(97, 167)
+position = Vector2(615, 441)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=670757176]
 position = Vector2(0, -5)
@@ -369,41 +369,48 @@ position = Vector2(565, 1121)
 
 [node name="Enemies" type="Node" parent="." unique_id=1866655542]
 
-[node name="Slime" parent="Enemies" unique_id=1270955932 instance=ExtResource("6_p57ef")]
+[node name="Slimes" type="Node" parent="Enemies" unique_id=126902005]
+
+[node name="Slime" parent="Enemies/Slimes" unique_id=1270955932 instance=ExtResource("6_p57ef")]
 position = Vector2(545, 497)
 
-[node name="Slime2" parent="Enemies" unique_id=383236629 instance=ExtResource("6_p57ef")]
+[node name="Slime2" parent="Enemies/Slimes" unique_id=383236629 instance=ExtResource("6_p57ef")]
 position = Vector2(298, 722)
 
-[node name="Slime4" parent="Enemies" unique_id=432546810 instance=ExtResource("6_p57ef")]
+[node name="Slime4" parent="Enemies/Slimes" unique_id=432546810 instance=ExtResource("6_p57ef")]
 position = Vector2(305, 817)
 
-[node name="Slime5" parent="Enemies" unique_id=1658539343 instance=ExtResource("6_p57ef")]
+[node name="Slime5" parent="Enemies/Slimes" unique_id=1658539343 instance=ExtResource("6_p57ef")]
 position = Vector2(337, 994)
 
-[node name="Slime6" parent="Enemies" unique_id=765586182 instance=ExtResource("6_p57ef")]
+[node name="Slime6" parent="Enemies/Slimes" unique_id=765586182 instance=ExtResource("6_p57ef")]
 position = Vector2(336, 1089)
 
-[node name="Slime8" parent="Enemies" unique_id=1996867697 instance=ExtResource("6_p57ef")]
+[node name="Slime8" parent="Enemies/Slimes" unique_id=1996867697 instance=ExtResource("6_p57ef")]
 position = Vector2(320, 1185)
 
-[node name="Slime10" parent="Enemies" unique_id=1454168801 instance=ExtResource("6_p57ef")]
+[node name="Slime10" parent="Enemies/Slimes" unique_id=1454168801 instance=ExtResource("6_p57ef")]
 position = Vector2(472, 1233)
 
-[node name="Slime7" parent="Enemies" unique_id=593285046 instance=ExtResource("6_p57ef")]
+[node name="Slime7" parent="Enemies/Slimes" unique_id=593285046 instance=ExtResource("6_p57ef")]
 position = Vector2(623, 1168)
 
-[node name="Slime9" parent="Enemies" unique_id=1625562546 instance=ExtResource("6_p57ef")]
+[node name="Slime9" parent="Enemies/Slimes" unique_id=1625562546 instance=ExtResource("6_p57ef")]
 position = Vector2(649, 1056)
 
-[node name="Slime11" parent="Enemies" unique_id=381591260 instance=ExtResource("6_p57ef")]
+[node name="Slime11" parent="Enemies/Slimes" unique_id=381591260 instance=ExtResource("6_p57ef")]
 position = Vector2(676, 1025)
 
-[node name="Slime12" parent="Enemies" unique_id=499753706 instance=ExtResource("6_p57ef")]
+[node name="Slime12" parent="Enemies/Slimes" unique_id=499753706 instance=ExtResource("6_p57ef")]
 position = Vector2(708, 993)
 
-[node name="Slime13" parent="Enemies" unique_id=1922355874 instance=ExtResource("6_p57ef")]
+[node name="Slime13" parent="Enemies/Slimes" unique_id=1922355874 instance=ExtResource("6_p57ef")]
 position = Vector2(239, 913)
+
+[node name="Bats" type="Node" parent="Enemies" unique_id=926942155]
+
+[node name="Bat" parent="Enemies/Bats" unique_id=1186418415 instance=ExtResource("11_dinhu")]
+position = Vector2(555, 143)
 
 [node name="Bricks" type="Node" parent="." unique_id=1276646721]
 
@@ -826,9 +833,5 @@ shape = SubResource("WorldBoundaryShape2D_kvpfn")
 [node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
 position = Vector2(435, -248.99997)
 
-[node name="Bat" parent="." unique_id=1186418415 instance=ExtResource("11_dinhu")]
-position = Vector2(556, 143)
-
 [node name="Checkpoint" parent="." unique_id=189361673 instance=ExtResource("4_kvuet")]
-z_index = 2
-position = Vector2(438, 137)
+position = Vector2(670, 441)

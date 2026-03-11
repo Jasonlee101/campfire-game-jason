@@ -4,6 +4,56 @@
 [ext_resource type="Texture2D" uid="uid://cn6gub68j0tdd" path="res://assets/sprites/Title.png" id="2_mhnvy"]
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_4ytvr"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_con2f"]
+atlas = ExtResource("2_mhnvy")
+region = Rect2(0, 0, 220, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhnvy"]
+atlas = ExtResource("2_mhnvy")
+region = Rect2(220, 0, 220, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ytvr"]
+atlas = ExtResource("2_mhnvy")
+region = Rect2(440, 0, 220, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3eks"]
+atlas = ExtResource("2_mhnvy")
+region = Rect2(660, 0, 220, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v86rl"]
+atlas = ExtResource("2_mhnvy")
+region = Rect2(880, 0, 220, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13sgg"]
+atlas = ExtResource("2_mhnvy")
+region = Rect2(1100, 0, 220, 148)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i6lef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_con2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhnvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ytvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3eks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v86rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13sgg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="menu" type="Control" unique_id=1800608211]
 layout_mode = 3
 anchors_preset = 0
@@ -11,9 +61,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_con2f")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=155376436]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_mhnvy")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1466422956]
+position = Vector2(0, 0.99998474)
+scale = Vector2(2.7181818, 2.6891892)
+sprite_frames = SubResource("SpriteFrames_i6lef")
+autoplay = "default"
+frame_progress = 0.2873879
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1426685451]
 position = Vector2(1, 1)
@@ -21,9 +74,9 @@ zoom = Vector2(2.5, 2.5)
 
 [node name="Label" type="Label" parent="." unique_id=800731577]
 layout_mode = 0
-offset_left = -133.0
-offset_top = 83.0
-offset_right = 159.0
-offset_bottom = 106.0
+offset_left = -135.0
+offset_top = 142.0
+offset_right = 157.0
+offset_bottom = 165.0
 theme_override_fonts/font = ExtResource("3_4ytvr")
 text = "CLICK SPACE TO START"
