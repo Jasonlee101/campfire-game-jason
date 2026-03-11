@@ -171,10 +171,10 @@ layer_2/name = "Fore"
 layer_2/z_index = 6
 
 [node name="Player" parent="." unique_id=295882371 instance=ExtResource("1_uwrxv")]
-position = Vector2(424, 461)
+position = Vector2(116, 160)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=670757176]
-position = Vector2(0, -5)
+position = Vector2(0, 8)
 scale = Vector2(2, 2)
 zoom = Vector2(4, 4)
 limit_left = 0
@@ -830,8 +830,8 @@ text = "Did you get all  30 gems?"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundries/StaticBody2D" unique_id=1719607773]
 shape = SubResource("WorldBoundaryShape2D_kvpfn")
 
-[node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
-position = Vector2(435, -248.99997)
-
 [node name="Checkpoint" parent="." unique_id=189361673 instance=ExtResource("4_kvuet")]
 position = Vector2(674, 440)
+
+[node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
+position = Vector2(371, -281)
