@@ -21,7 +21,10 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 			if player != null:
 				var distance = global_position.distance_to(player.global_position)
 				if distance <= interaction_range:
+					if player.has_method("click_animation"):
+						player.click_animation()
 					take_damage()
+
 func _process(_delta: float):
 	if health <= 0:
 		if area_2d:                               

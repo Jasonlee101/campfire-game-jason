@@ -40,22 +40,12 @@ func _physics_process(delta: float):
 				animated_sprite.play("run")
 		else:
 			animated_sprite.play("jump")
-	if velocity.x < 0:
-		$MineRay.target_position.x = -40
-	elif velocity.x < 0:
-		$MineRay.target_position.x = 40
-	
-	
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
-	
-	if velocity.x > 0:
-		$MineRay.target_position = Vector2(40, 0)
-	elif velocity.x <0:
-		$MineRay.target_position = Vector2(-40, 0)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if dead: return
@@ -68,17 +58,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		click_animation()
 		_perform_swing()
 
-func _input(event):
 	if event.is_action_pressed("minex"):
-		pickaxe_sprite.play("swing")
-		await get_tree().create_timer(0.34).timeout
-		pickaxe_sprite.play("idle")
-		
-		if $MineRay.is_colliding():
-			var target =$MineRay.get_collider()
-			if target.has_method("take_damage"):
-				target.take_damage()
-				
+		_handle_directional_mining()
+
 func _perform_swing():
 	pickaxe_sprite.play("swing")
 	await get_tree().create_timer(0.34).timeout
@@ -97,6 +79,32 @@ func _process(_delta):
 		hand_pivot.scale.y = 1
 
 func click_animation():
-		click.play("click")
-		await get_tree().create_timer(0.6).timeout
-		click.play("idle")
+	click.play("click")
+	await get_tree().create_timer(0.6).timeout
+	click.play("idle")
+
+func _handle_directional_mining():
+	var mine_dir = Vector2.ZERO
+	
+	if Input.is_action_pressed("ui_up"):    # Or whatever your 'up' action is
+		mine_dir = Vector2(0, -40)          # Up
+	elif Input.is_action_pressed("ui_down"):
+		mine_dir = Vector2(0, 40)           # Down
+	else:
+		if animated_sprite.flip_h:
+			mine_dir = Vector2(-40, 0)      # Left
+		else:
+			mine_dir = Vector2(40, 0)       # Right
+
+	# 2. Update the RayCast target
+	$MineRay.target_position = mine_dir
+	$MineRay.add_exception(self)
+	# 3. Force the RayCast to update immediately so it doesn't wait for the next frame
+	$MineRay.force_raycast_update()
+
+	_perform_swing()  # Your existing swing animation
+
+	if $MineRay.is_colliding():
+		var target = $MineRay.get_collider()
+		if target and target.has_method("take_damage"):
+			target.take_damage()

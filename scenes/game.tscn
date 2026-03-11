@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dc6sbs4blrat1" path="res://scenes/brick.tscn" id="7_u5sy4"]
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://d1h4yaxvhi6xm" path="res://scenes/fog.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" path="res://scenes/bat.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://ktw2lh3tpmte" path="res://scenes/bat.tscn" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://c0d1lq5i4mg7m" path="res://scripts/scorelabel.gd" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvpfn"]
@@ -421,7 +421,7 @@ position = Vector2(487, 120)
 position = Vector2(599, 168)
 
 [node name="Brick3" parent="Bricks" unique_id=1825294920 instance=ExtResource("7_u5sy4")]
-position = Vector2(487, 136)
+position = Vector2(81, 167)
 
 [node name="Brick4" parent="Bricks" unique_id=4482902 instance=ExtResource("7_u5sy4")]
 position = Vector2(647, 472)

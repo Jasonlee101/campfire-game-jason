@@ -284,4 +284,5 @@ autoplay = "idle"
 stream = ExtResource("5_qlg0r")
 
 [node name="MineRay" type="RayCast2D" parent="." unique_id=120294779]
+position = Vector2(0, -8)
 target_position = Vector2(40, 0)
