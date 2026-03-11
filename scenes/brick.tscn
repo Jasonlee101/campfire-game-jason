@@ -206,7 +206,7 @@ shape = SubResource("RectangleShape2D_5l4w1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1829214577]
 sprite_frames = SubResource("SpriteFrames_7mekc")
-animation = &"3"
+animation = &"1"
 autoplay = "3"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=575799390]

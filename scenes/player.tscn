@@ -282,3 +282,6 @@ autoplay = "idle"
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1111808090]
 stream = ExtResource("5_qlg0r")
+
+[node name="MineRay" type="RayCast2D" parent="." unique_id=120294779]
+target_position = Vector2(40, 0)

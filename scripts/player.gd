@@ -40,12 +40,22 @@ func _physics_process(delta: float):
 				animated_sprite.play("run")
 		else:
 			animated_sprite.play("jump")
-
+	if velocity.x < 0:
+		$MineRay.target_position.x = -40
+	elif velocity.x < 0:
+		$MineRay.target_position.x = 40
+	
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
+	
+	if velocity.x > 0:
+		$MineRay.target_position = Vector2(40, 0)
+	elif velocity.x <0:
+		$MineRay.target_position = Vector2(-40, 0)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if dead: return
@@ -58,6 +68,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		click_animation()
 		_perform_swing()
 
+func _input(event):
+	if event.is_action_pressed("minex"):
+		pickaxe_sprite.play("swing")
+		await get_tree().create_timer(0.34).timeout
+		pickaxe_sprite.play("idle")
+		
+		if $MineRay.is_colliding():
+			var target =$MineRay.get_collider()
+			if target.has_method("take_damage"):
+				target.take_damage()
+				
 func _perform_swing():
 	pickaxe_sprite.play("swing")
 	await get_tree().create_timer(0.34).timeout

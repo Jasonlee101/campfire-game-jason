@@ -21,10 +21,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 			if player != null:
 				var distance = global_position.distance_to(player.global_position)
 				if distance <= interaction_range:
-					tap_sound.play()
-					health -= 1 
-					animated_sprite.play(str(health))
-
+					take_damage()
 func _process(_delta: float):
 	if health <= 0:
 		if area_2d:                               
@@ -33,3 +30,12 @@ func _process(_delta: float):
 			
 		animated_sprite.play('break')
 		animation_player.play('break')
+
+func take_damage():
+	if health >= 1:
+		health -= 1 
+		if tap_sound:
+			tap_sound.play()
+		var anim_name = str(health)
+		if animated_sprite.sprite_frames.has_animation(anim_name):
+			animated_sprite.play(str(health))
