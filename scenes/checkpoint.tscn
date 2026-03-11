@@ -179,7 +179,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55jpe"]
-size = Vector2(27, 47)
+size = Vector2(17, 28)
 
 [node name="Checkpoint" type="Area2D" unique_id=189361673]
 collision_mask = 2
@@ -191,6 +191,7 @@ animation = &"inactive"
 autoplay = "inactive"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1407089133]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_55jpe")
 
 [node name="Label" type="Label" parent="." unique_id=345148879]
