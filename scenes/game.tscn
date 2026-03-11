@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dyq34ko0iq8gm" path="res://scenes/slime.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://dc6sbs4blrat1" path="res://scenes/brick.tscn" id="7_u5sy4"]
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://baqxmao8a610f" path="res://scenes/instructionsign.tscn" id="10_trtic"]
 [ext_resource type="PackedScene" uid="uid://d1h4yaxvhi6xm" path="res://scenes/fog.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://ktw2lh3tpmte" path="res://scenes/bat.tscn" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://c0d1lq5i4mg7m" path="res://scripts/scorelabel.gd" id="11_kvpfn"]
@@ -665,6 +666,9 @@ position = Vector2(535, 1320)
 
 [node name="Brick84" parent="Bricks" unique_id=789302253 instance=ExtResource("7_u5sy4")]
 position = Vector2(535, 1304)
+
+[node name="InstructionSign" parent="Bricks" unique_id=1088578647 instance=ExtResource("10_trtic")]
+position = Vector2(134, 169)
 
 [node name="Labels" type="Node" parent="." unique_id=154194728]
 

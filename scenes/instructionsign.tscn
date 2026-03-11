@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://baqxmao8a610f"]
+
+[ext_resource type="Script" uid="uid://d00heapqrxuig" path="res://scripts/instructionsign.gd" id="1_7fo4x"]
+[ext_resource type="Texture2D" uid="uid://cvv78fu4yjgjo" path="res://assets/sprites/Instructions/Sign.png" id="1_fst5d"]
+[ext_resource type="Texture2D" uid="uid://6u5q48pjd1h3" path="res://assets/sprites/Instructions/One.png" id="3_srs06"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqr8l"]
+atlas = ExtResource("1_fst5d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fo4x"]
+atlas = ExtResource("1_fst5d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srs06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqr8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fo4x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0o5k"]
+size = Vector2(60.5, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0o5k"]
+atlas = ExtResource("3_srs06")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvbsw"]
+atlas = ExtResource("3_srs06")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4u17o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0o5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvbsw")
+}],
+"loop": true,
+"name": &"move_hint",
+"speed": 2.0
+}]
+
+[node name="InstructionSign" type="Area2D" unique_id=1088578647]
+collision_mask = 2
+script = ExtResource("1_7fo4x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1391739458]
+sprite_frames = SubResource("SpriteFrames_srs06")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.60070246
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1950898033]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_r0o5k")
+
+[node name="InstructionBubble" type="AnimatedSprite2D" parent="." unique_id=391927765]
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_4u17o")
+animation = &"move_hint"
+autoplay = "move_hint"
+frame_progress = 0.06868073
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
