@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://nsuw8yme85k1"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/Mushrooms/Big Mushrooms.png" id="1_g5jiy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Mushrooms/Mushrooms.png" id="1_gjkia"]
+[ext_resource type="Script" path="res://scripts/mushrooms.gd" id="2_gjkia"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5jiy"]
+atlas = ExtResource("1_gjkia")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y81ac"]
+atlas = ExtResource("1_gjkia")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12dak"]
+atlas = ExtResource("1_g5jiy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_238af"]
+atlas = ExtResource("1_g5jiy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn7hj"]
+atlas = ExtResource("1_g5jiy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqnxh"]
+atlas = ExtResource("1_g5jiy")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caibu"]
+atlas = ExtResource("1_g5jiy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx2a1"]
+atlas = ExtResource("1_g5jiy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thu22"]
+atlas = ExtResource("1_g5jiy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e87t5"]
+atlas = ExtResource("1_g5jiy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qesjn"]
+atlas = ExtResource("1_gjkia")
+region = Rect2(36, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ommxj"]
+atlas = ExtResource("1_gjkia")
+region = Rect2(54, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b2gl"]
+atlas = ExtResource("1_gjkia")
+region = Rect2(72, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1b2h"]
+atlas = ExtResource("1_gjkia")
+region = Rect2(90, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqgxq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5jiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5jiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y81ac")
+}],
+"loop": true,
+"name": &"Large",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12dak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12dak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_238af")
+}],
+"loop": true,
+"name": &"Long BL",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn7hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn7hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqnxh")
+}],
+"loop": true,
+"name": &"Long BR",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caibu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx2a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caibu")
+}],
+"loop": true,
+"name": &"Long TL",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thu22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thu22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e87t5")
+}],
+"loop": true,
+"name": &"Long TR",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qesjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qesjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ommxj")
+}],
+"loop": true,
+"name": &"Medium",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b2gl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1b2h")
+}],
+"loop": true,
+"name": &"Small",
+"speed": 1.0
+}]
+
+[node name="Mushrooms" type="AnimatedSprite2D" unique_id=906345198]
+z_index = 7
+sprite_frames = SubResource("SpriteFrames_lqgxq")
+animation = &"Long TR"
+frame_progress = 0.69460136
+script = ExtResource("2_gjkia")
