@@ -6,6 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var dead = false
 var swinging = false 
 var direction = 0
+var is_invulnerable = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var hand_pivot = $HandPivot
@@ -15,7 +16,6 @@ var direction = 0
 @onready var jump_sound = $JumpSound
 @onready var click = $Click
 
-var is_invulnerable = false
 func _ready() -> void:
 	click.top_level = true
 	# If we have a saved checkpoint position, move the player there immediately
@@ -76,14 +76,23 @@ func _process(_delta):
 	else:
 		hand_pivot.scale.y = 1
 
-func click_animation():
-	if $MineRay.is_colliding():
+func click_animation(pos = null):
+	if pos != null:
+		# If a specific position was passed (from the mouse click), use it
+		click.global_position = pos
+	elif $MineRay.is_colliding():
+		# If no position was passed, but the RayCast hit something, use that
 		click.global_position = $MineRay.get_collision_point()
 	else:
+		# Fallback just in case
 		click.global_position = get_global_mouse_position()
 		
 	click.play("click")
-	await click.animation_finished
+	# Clean way to reset the animation without a timer
+	if not click.animation_finished.is_connected(_on_click_finished):
+		click.animation_finished.connect(_on_click_finished)
+
+func _on_click_finished():
 	click.play("idle")
 
 func _handle_directional_mining():
@@ -105,12 +114,11 @@ func _handle_directional_mining():
 	# 3. Force the RayCast to update immediately so it doesn't wait for the next frame
 	$MineRay.force_raycast_update()
 
-	click_animation()
-	_perform_swing()  # Your existing swing animation
-
 	if $MineRay.is_colliding():
 		var target = $MineRay.get_collider()
+		_perform_swing()
 		if target and target.has_method("take_damage"):
+			click_animation()
 			target.take_damage()
 
 func become_invulnerable(seconds: float):
@@ -123,4 +131,3 @@ func become_invulnerable(seconds: float):
 	await get_tree().create_timer(seconds).timeout
 	is_invulnerable = false
 	modulate.a = 1.0
-	
