@@ -15,11 +15,13 @@ var direction = 0
 @onready var jump_sound = $JumpSound
 @onready var click = $Click
 
+var is_invulnerable = false
 func _ready() -> void:
 	click.top_level = true
 	# If we have a saved checkpoint position, move the player there immediately
 	if Global.has_checkpoint:
-		global_position = Global.last_checkpoint_pos
+		global_position = Global.last_checkpoint_pos + Vector2(0, -5)
+		become_invulnerable(2.0)
 
 func _physics_process(delta: float):
 	if not is_on_floor(): # Add the gravity.
@@ -110,3 +112,15 @@ func _handle_directional_mining():
 		var target = $MineRay.get_collider()
 		if target and target.has_method("take_damage"):
 			target.take_damage()
+
+func become_invulnerable(seconds: float):
+	is_invulnerable = true
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.3, 0.1)
+	tween.tween_property(self, "modulate:a", 1.0, 0.1)
+	tween.set_loops(int(seconds * 5))
+	
+	await get_tree().create_timer(seconds).timeout
+	is_invulnerable = false
+	modulate.a = 1.0
+	

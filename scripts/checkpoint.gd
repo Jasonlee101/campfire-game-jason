@@ -1,9 +1,10 @@
 extends Area2D
 
+@export var fog_to_activate: Area2D
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var label = $Label
 @onready var save_sound = $SaveSound
-
 var is_active = false
 
 func _ready():
@@ -11,43 +12,29 @@ func _ready():
 	if Global.has_checkpoint and Global.last_checkpoint_pos == global_position:
 		is_active = true
 		animated_sprite.play("active") # Jump straight to the looping state
+		
+		if fog_to_activate != null:
+			var anim_player = fog_to_activate.get_node("AnimationPlayer")
+			if anim_player:
+				anim_player.play("fog down")
+				anim_player.seek(Global.saved_fog_time, true)
 	else:
 		animated_sprite.play("inactive")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and not is_active:
-		activate_checkpoint()
+		activate_checkpoint()	
 
 func activate_checkpoint():
 	is_active = true
 	Global.last_checkpoint_pos = global_position
 	Global.has_checkpoint = true
+	if fog_to_activate != null:
+		var anim_player = fog_to_activate.get_node("AnimationPlayer")
+		if anim_player:
+			Global.saved_fog_time = anim_player.current_animation_position
+			print("Checkpoint! Saving fog at: ", Global.saved_fog_time, " seconds.")
 	
-	var fog_node = get_tree().get_first_node_in_group("fog")
-	if fog_node:
-		var anim_player: AnimationPlayer = fog_node.get_node("AnimationPlayer")
-		var anim: Animation = anim_player.get_animation("fog down")
-		
-		var current_time = anim_player.current_animation_position
-		var safe_time = current_time
-
-		var min_safe_distance = 250.0 # Increase this for a bigger gap
-		var time_step = 0.1
-		var track_idx = anim.find_track("Killzone:position", Animation.TYPE_VALUE)
-		# We use the fog's global Y as the starting point
-		var fog_base_y = fog_node.global_position.y
-		
-		# LOOP: Keep rewinding
-		while safe_time > 0.0:
-			var local_fog_pos = anim.value_track_interpolate(track_idx, safe_time)
-			var global_killzone_y = fog_base_y + (local_fog_pos.y * fog_node.global_scale.y)
-			var dist_y = abs(global_position.y - global_killzone_y)
-			
-			if dist_y >= min_safe_distance: break
-			safe_time -= time_step
-
-		Global.fog_save_offset = max(0.0, safe_time)
-		print("Fog distance at save: ", abs(global_position.y - (fog_base_y + (anim.value_track_interpolate(track_idx, Global.fog_save_offset).y * fog_node.global_scale.y))))
 
 	animated_sprite.play("activating")
 

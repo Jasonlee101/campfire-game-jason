@@ -169,7 +169,6 @@ shape = SubResource("CircleShape2D_relgi")
 
 [node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=425643046]
 stream = ExtResource("3_11l1o")
-bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=574169437]
 root_node = NodePath("../pickupsound")
