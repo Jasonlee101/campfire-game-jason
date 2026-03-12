@@ -12,9 +12,9 @@
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://baqxmao8a610f" path="res://scenes/instruction_sign.tscn" id="10_trtic"]
 [ext_resource type="PackedScene" uid="uid://d1h4yaxvhi6xm" path="res://scenes/fog.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" uid="uid://ktw2lh3tpmte" path="res://scenes/bat.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" path="res://scenes/bat.tscn" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://c0d1lq5i4mg7m" path="res://scripts/scorelabel.gd" id="11_kvpfn"]
-[ext_resource type="Script" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
+[ext_resource type="Script" uid="uid://divd0ypswtjtb" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvpfn"]
 texture = ExtResource("2_vtaks")
@@ -326,7 +326,7 @@ position = Vector2(413, 413)
 position = Vector2(703, 1012)
 
 [node name="Coin29" parent="Coins" unique_id=1132354215 instance=ExtResource("4_lbhrr")]
-position = Vector2(8, -92)
+position = Vector2(71, -72)
 
 [node name="Coin30" parent="Coins" unique_id=2105232577 instance=ExtResource("4_lbhrr")]
 position = Vector2(291, -26)
@@ -724,10 +724,11 @@ text = "score"
 script = ExtResource("11_kvpfn")
 
 [node name="Label7" type="Label" parent="Labels" unique_id=526102087]
-offset_left = 201.0
-offset_top = -131.0
-offset_right = 367.0
-offset_bottom = -57.0
+z_index = 100
+offset_left = 223.0
+offset_top = -106.0
+offset_right = 389.0
+offset_bottom = -32.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_gee14")
 theme_override_font_sizes/font_size = 8
@@ -844,7 +845,7 @@ position = Vector2(93, 169)
 position = Vector2(672, 440)
 
 [node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
-position = Vector2(443, -257)
+position = Vector2(439, -203)
 
 [node name="FogTrigger" type="Area2D" parent="." unique_id=1040045471 node_paths=PackedStringArray("fog_to_activate")]
 collision_mask = 2
