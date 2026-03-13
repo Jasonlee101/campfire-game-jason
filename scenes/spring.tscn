@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bca1w11ysdb3i"]
+
+[ext_resource type="Script" uid="uid://dcll2qmis5anr" path="res://scripts/spring.gd" id="1_6vrsj"]
+[ext_resource type="Texture2D" uid="uid://b7cdl0t5md4mf" path="res://assets/sprites/Mushrooms/Spring.png" id="1_61klm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vrsj"]
+atlas = ExtResource("1_61klm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6w1c"]
+atlas = ExtResource("1_61klm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iudvb"]
+atlas = ExtResource("1_61klm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l13eo"]
+atlas = ExtResource("1_61klm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrxyh"]
+atlas = ExtResource("1_61klm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7nqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vrsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6w1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iudvb")
+}],
+"loop": false,
+"name": &"boing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l13eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l13eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrxyh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqx6w"]
+size = Vector2(14, 4.25)
+
+[node name="Area2D" type="Area2D" unique_id=615408050]
+collision_mask = 2
+script = ExtResource("1_6vrsj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=12901142]
+sprite_frames = SubResource("SpriteFrames_l7nqg")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099069573]
+position = Vector2(0, -6.125)
+shape = SubResource("RectangleShape2D_yqx6w")
+one_way_collision = true
