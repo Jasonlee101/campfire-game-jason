@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://d2w58t78sjoo1" path="res://assets/sprites/Pickaxe/Pickaxe.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://b7y7lv43jx0af" path="res://assets/sprites/Pickaxe/Pickaxe_Animation.png" id="4_dqkch"]
 [ext_resource type="AudioStream" uid="uid://cy2acuuy1awl8" path="res://assets/sounds/jump.wav" id="5_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://cvgu4dbwvx48d" path="res://assets/sprites/Click.png" id="5_tuyoq"]
-[ext_resource type="Texture2D" uid="uid://c2ig5ina3y58s" path="res://assets/sprites/Pickaxe/Slash.png" id="6_fjrip"]
+[ext_resource type="Texture2D" uid="uid://cvgu4dbwvx48d" path="res://assets/sprites/Effects/Click.png" id="5_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://c2ig5ina3y58s" path="res://assets/sprites/Effects/Slash.png" id="6_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("2_qhqgy")

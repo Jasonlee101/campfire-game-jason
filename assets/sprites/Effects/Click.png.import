@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2ig5ina3y58s"
-path="res://.godot/imported/Slash.png-a97c4dbf76a50982d8954f7aad18c5e2.ctex"
+uid="uid://cvgu4dbwvx48d"
+path="res://.godot/imported/Click.png-cdd842a617c42b841dc58780d5a40e71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Pickaxe/Slash.png"
-dest_files=["res://.godot/imported/Slash.png-a97c4dbf76a50982d8954f7aad18c5e2.ctex"]
+source_file="res://assets/sprites/Effects/Click.png"
+dest_files=["res://.godot/imported/Click.png-cdd842a617c42b841dc58780d5a40e71.ctex"]
 
 [params]
 
