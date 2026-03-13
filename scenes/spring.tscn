@@ -3,6 +3,29 @@
 [ext_resource type="Script" uid="uid://dcll2qmis5anr" path="res://scripts/spring.gd" id="1_6vrsj"]
 [ext_resource type="Texture2D" uid="uid://b7cdl0t5md4mf" path="res://assets/sprites/Mushrooms/Spring.png" id="1_61klm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqx6w"]
+size = Vector2(14, 4.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7nqg"]
+atlas = ExtResource("1_61klm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqx6w"]
+atlas = ExtResource("1_61klm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01pfy"]
+atlas = ExtResource("1_61klm")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teosb"]
+atlas = ExtResource("1_61klm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58nyd"]
+atlas = ExtResource("1_61klm")
+region = Rect2(64, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6vrsj"]
 atlas = ExtResource("1_61klm")
 region = Rect2(16, 0, 16, 16)
@@ -23,8 +46,56 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("1_61klm")
 region = Rect2(16, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcqmq"]
+atlas = ExtResource("1_61klm")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycc1q"]
+atlas = ExtResource("1_61klm")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_430fb"]
+atlas = ExtResource("1_61klm")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jyx3"]
+atlas = ExtResource("1_61klm")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftlf4"]
+atlas = ExtResource("1_61klm")
+region = Rect2(112, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_l7nqg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7nqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqx6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01pfy")
+}],
+"loop": false,
+"name": &"left_boing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teosb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teosb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58nyd")
+}],
+"loop": true,
+"name": &"left_idle",
+"speed": 2.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6vrsj")
@@ -36,7 +107,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_iudvb")
 }],
 "loop": false,
-"name": &"boing",
+"name": &"middle_boing",
 "speed": 10.0
 }, {
 "frames": [{
@@ -50,22 +121,47 @@ animations = [{
 "texture": SubResource("AtlasTexture_yrxyh")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 1.0
+"name": &"middle_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcqmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycc1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_430fb")
+}],
+"loop": false,
+"name": &"right_boing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jyx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jyx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftlf4")
+}],
+"loop": true,
+"name": &"right_idle",
+"speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqx6w"]
-size = Vector2(14, 4.25)
-
-[node name="Area2D" type="Area2D" unique_id=615408050]
+[node name="Spring" type="Area2D" unique_id=615408050]
 collision_mask = 2
 script = ExtResource("1_6vrsj")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=12901142]
-sprite_frames = SubResource("SpriteFrames_l7nqg")
-animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099069573]
 position = Vector2(0, -6.125)
 shape = SubResource("RectangleShape2D_yqx6w")
 one_way_collision = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=360099688]
+sprite_frames = SubResource("SpriteFrames_l7nqg")
+animation = &"middle_idle"
