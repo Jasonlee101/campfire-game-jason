@@ -22,7 +22,6 @@ var empty_heart_rect = Rect2(16, 0 , 16,16)
 @onready var click = $Click
 @onready var slash: AnimatedSprite2D = $Slash
 
-
 func _ready() -> void:
 	current_health = max_health
 	update_heart_ui()
@@ -168,17 +167,18 @@ func play_slash(dir: Vector2):
 	slash.modulate.a = 1.0
 	slash.play("slash")
 
-func take_damage():
-	if dead or is_invulnerable:
-		pass
+func take_damage(amount: int = 1):
+	if dead or is_invulnerable: return 
+		
 	damage_sound.play()
-	
-	current_health -= 1
+	current_health -= amount
+	current_health = max(0, current_health)
 	update_heart_ui()
+	
 	if current_health <= 0:
 		die()
 	else:
-		become_invulnerable(1)
+		become_invulnerable(2.0)
 
 func update_heart_ui():
 	var hearts = [

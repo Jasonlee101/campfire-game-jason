@@ -3,7 +3,7 @@ extends StaticBody2D
 enum BrickType { NORMAL, GEM_CLUSTER }
 
 @export var type: BrickType = BrickType.NORMAL
-@export var gem_scene: PackedScene = preload("res://scenes/coin.tscn")
+@export var gem_scene: PackedScene = preload("res://scenes/gem.tscn")
 @export var interaction_range: float = 40.0
 
 @onready var animated_sprite = $AnimatedSprite2D

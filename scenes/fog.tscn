@@ -84,7 +84,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1440, 200)
 
 [node name="Killzone" parent="." unique_id=1035503713 instance=ExtResource("3_1o7ot")]
-is_instakill = true
+damage_amount = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1946591942]
 position = Vector2(0, 0.73970485)
