@@ -71,6 +71,7 @@ _data = {
 }
 
 [node name="FadeLayer" type="CanvasLayer" unique_id=1632933723]
+layer = 100
 script = ExtResource("1_nukjo")
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=1051900017]
