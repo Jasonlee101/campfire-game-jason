@@ -8,9 +8,11 @@
 
 [node name="cutscene" type="Control" unique_id=521590543]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_edmg7")
 slides = Array[Texture2D]([ExtResource("2_fs8wb"), ExtResource("3_bb0yx"), ExtResource("4_3ptll"), ExtResource("5_d18fx")])
 
@@ -19,6 +21,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -731.0
+offset_top = -483.0
+offset_right = -731.0
+offset_bottom = -483.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
@@ -29,5 +35,6 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2002365899]
+position = Vector2(726, 484)
 offset = Vector2(20, 20)
-zoom = Vector2(40, 40)
+zoom = Vector2(5, 5)
