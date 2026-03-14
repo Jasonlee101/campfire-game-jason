@@ -2,7 +2,7 @@ extends Node2D
 
 @export var health: int = 3
 @export var knockback_force: float = 20.0 # Adjust this in the Inspector
-
+@export var interaction_range: float = 80.0
 const SPEED = 60
 var direction = -1
 
@@ -19,6 +19,18 @@ func _process(delta):
 		animated_sprite.flip_h = false
 	
 	position.x += direction * SPEED * delta 
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if health > 0:
+			var player = get_tree().get_first_node_in_group("player")
+			if player:
+				var distance = global_position.distance_to(player.global_position)
+				if distance <= interaction_range:
+					if player.has_method("click_animation"):
+						player.click_animation()
+					
+					take_damage()
 
 func take_damage():
 	health -= 1
