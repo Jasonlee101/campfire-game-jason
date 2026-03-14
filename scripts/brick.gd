@@ -41,17 +41,14 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 
 func take_damage():
 	health -= 1
+	
 	if tap_sound:
 		tap_sound.play()
-	
-	# Drop a gem if it's a cluster
 	if type == BrickType.GEM_CLUSTER:
 		spawn_gem()
-	
 	if health <= 0:
 		handle_break()
 	else:
-		# Play the correct frame based on type and remaining health
 		var anim_prefix = "gem_" if type == BrickType.GEM_CLUSTER else ""
 		animated_sprite.play(anim_prefix + str(health))
 
