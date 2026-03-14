@@ -38,8 +38,8 @@ func start_interact_cutscene():
 	
 	# 3. Instantiate the cutscene
 	var cutscene_instance = cutscene_scene.instantiate()
-	
-	# 4. Inject the slides BEFORE adding to tree
+	if cutscene_instance is Control:
+		cutscene_instance.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	if new_cutscene_slides.size() > 0:
 		cutscene_instance.slides = new_cutscene_slides
 	
