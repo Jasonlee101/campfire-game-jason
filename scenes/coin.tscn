@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cxf63ko2lr5u4"]
 
 [ext_resource type="Script" uid="uid://x6pvceyj33jj" path="res://scripts/coin.gd" id="1_i64fm"]
-[ext_resource type="Texture2D" uid="uid://htwmd0issf2t" path="res://assets/sprites/gem.png" id="2_i64fm"]
+[ext_resource type="Texture2D" uid="uid://htwmd0issf2t" path="res://assets/sprites/Gem.png" id="2_i64fm"]
 [ext_resource type="AudioStream" uid="uid://dvradmh6pixkn" path="res://assets/sounds/coin.wav" id="3_11l1o"]
 [ext_resource type="Texture2D" uid="uid://cggr7adig7cwk" path="res://assets/sprites/Effects/Sparkle.png" id="3_d14el"]
 
@@ -179,8 +179,8 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_relgi"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d14el"]
+size = Vector2(12, 13)
 
 [sub_resource type="Animation" id="Animation_d14el"]
 length = 0.001
@@ -280,10 +280,13 @@ _data = {
 &"pickup": SubResource("Animation_1ikuy")
 }
 
-[node name="Coin" type="Area2D" unique_id=1032078497]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ikuy"]
+radius = 9.0
+
+[node name="Coin" type="CharacterBody2D" unique_id=313631128]
 top_level = true
 z_index = 5
-collision_mask = 3
+collision_layer = 4
 script = ExtResource("1_i64fm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2006921980]
@@ -292,7 +295,8 @@ sprite_frames = SubResource("SpriteFrames_s5w7y")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791103045]
-shape = SubResource("CircleShape2D_relgi")
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_d14el")
 
 [node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=425643046]
 stream = ExtResource("3_11l1o")
@@ -301,8 +305,10 @@ stream = ExtResource("3_11l1o")
 root_node = NodePath("../pickupsound")
 libraries/ = SubResource("AnimationLibrary_wnlwo")
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1876610896]
-position = Vector2(0, -1)
-target_position = Vector2(0, 10)
+[node name="Area2D" type="Area2D" parent="." unique_id=1843143092]
+collision_mask = 2
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=791693791]
+shape = SubResource("CircleShape2D_1ikuy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

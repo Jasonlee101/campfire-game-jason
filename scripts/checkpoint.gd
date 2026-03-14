@@ -34,11 +34,7 @@ func activate_checkpoint():
 	if fog_to_activate != null:
 		var anim_player = fog_to_activate.get_node("AnimationPlayer")
 		if anim_player:
-			# --- THE FIX: Subtract the safe margin from the current time ---
-			# We use max(0.0, ...) so the animation doesn't glitch by going into negative time!
 			Global.saved_fog_time = max(0.0, anim_player.current_animation_position - fog_time_margin)
-			print("Checkpoint! Saving fog at: ", Global.saved_fog_time, " seconds.")
-	
 
 	animated_sprite.play("activating")
 

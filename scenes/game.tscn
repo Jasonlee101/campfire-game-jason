@@ -14,16 +14,16 @@
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://baqxmao8a610f" path="res://scenes/instruction_sign.tscn" id="10_trtic"]
 [ext_resource type="PackedScene" uid="uid://d1h4yaxvhi6xm" path="res://scenes/fog.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" path="res://scenes/bat.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://ktw2lh3tpmte" path="res://scenes/bat.tscn" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://c0d1lq5i4mg7m" path="res://scripts/scorelabel.gd" id="11_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://dmpil6vb0533q" path="res://assets/sprites/Health.png" id="14_264po"]
-[ext_resource type="Script" uid="uid://divd0ypswtjtb" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
+[ext_resource type="Script" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bca1w11ysdb3i" path="res://scenes/spring.tscn" id="16_ca42v"]
 [ext_resource type="Script" uid="uid://mc3i8wf2e3p7" path="res://scripts/cutscene_trigger.gd" id="20_1kice"]
-[ext_resource type="Texture2D" uid="uid://dfdwlmuojwfr3" path="res://assets/sprites/cutscene/Screen 5.png" id="21_e1j6l"]
-[ext_resource type="Texture2D" uid="uid://bm2ufpk5b22da" path="res://assets/sprites/cutscene/Screen 6.png" id="22_pl11u"]
-[ext_resource type="Texture2D" uid="uid://ldln23w13bne" path="res://assets/sprites/cutscene/Screen 7.png" id="23_bhx41"]
-[ext_resource type="Texture2D" uid="uid://52ptk0fynpwh" path="res://assets/sprites/cutscene/Screen 8.png" id="24_qnb83"]
+[ext_resource type="Texture2D" uid="uid://dfdwlmuojwfr3" path="res://assets/sprites/Cutscene/Screen 5.png" id="21_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://bm2ufpk5b22da" path="res://assets/sprites/Cutscene/Screen 6.png" id="22_pl11u"]
+[ext_resource type="Texture2D" uid="uid://ldln23w13bne" path="res://assets/sprites/Cutscene/Screen 7.png" id="23_bhx41"]
+[ext_resource type="Texture2D" uid="uid://52ptk0fynpwh" path="res://assets/sprites/Cutscene/Screen 8.png" id="24_qnb83"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rysoc"]
 texture = ExtResource("2_vtaks")
@@ -892,7 +892,7 @@ is_ending_trigger = true
 new_cutscene_slides = Array[Texture2D]([ExtResource("21_e1j6l"), ExtResource("22_pl11u"), ExtResource("23_bhx41"), ExtResource("24_qnb83")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CutsceneTrigger" unique_id=378052267]
-position = Vector2(440, 2346)
+position = Vector2(109.00003, 170.99998)
 scale = Vector2(4.0446224, -0.7948793)
 shape = SubResource("RectangleShape2D_5newe")
 
@@ -910,93 +910,123 @@ text = "Press E"
 
 [node name="Coin" parent="Coins" unique_id=1032078497 instance=ExtResource("4_lbhrr")]
 position = Vector2(487, 265)
+collision_mask = 2
 
 [node name="Coin2" parent="Coins" unique_id=2077521883 instance=ExtResource("4_lbhrr")]
 position = Vector2(799, 1314)
+collision_mask = 2
 
 [node name="Coin3" parent="Coins" unique_id=657858343 instance=ExtResource("4_lbhrr")]
 position = Vector2(373, 291)
+collision_mask = 2
 
 [node name="Coin4" parent="Coins" unique_id=1024525703 instance=ExtResource("4_lbhrr")]
 position = Vector2(703, 980)
+collision_mask = 2
 
 [node name="Coin5" parent="Coins" unique_id=1167993921 instance=ExtResource("4_lbhrr")]
 position = Vector2(396, 612)
+collision_mask = 2
 
 [node name="Coin6" parent="Coins" unique_id=850974134 instance=ExtResource("4_lbhrr")]
 position = Vector2(631, 151)
+collision_mask = 2
 
 [node name="Coin7" parent="Coins" unique_id=807863165 instance=ExtResource("4_lbhrr")]
 position = Vector2(531, 676)
+collision_mask = 2
 
 [node name="Coin8" parent="Coins" unique_id=1126038804 instance=ExtResource("4_lbhrr")]
 position = Vector2(565, 1101)
+collision_mask = 2
 
 [node name="Coin9" parent="Coins" unique_id=1881940644 instance=ExtResource("4_lbhrr")]
 position = Vector2(395, 150)
+collision_mask = 2
 
 [node name="Coin10" parent="Coins" unique_id=1714970424 instance=ExtResource("4_lbhrr")]
 position = Vector2(679, 455)
+collision_mask = 2
 
 [node name="Coin11" parent="Coins" unique_id=1105610064 instance=ExtResource("4_lbhrr")]
 position = Vector2(375, 1034)
+collision_mask = 2
 
 [node name="Coin12" parent="Coins" unique_id=1479489272 instance=ExtResource("4_lbhrr")]
 position = Vector2(502, 482)
+collision_mask = 2
 
 [node name="Coin13" parent="Coins" unique_id=177134482 instance=ExtResource("4_lbhrr")]
 position = Vector2(294, 297)
+collision_mask = 2
 
 [node name="Coin14" parent="Coins" unique_id=2070107672 instance=ExtResource("4_lbhrr")]
 position = Vector2(550, 676)
+collision_mask = 2
 
 [node name="Coin15" parent="Coins" unique_id=1150145968 instance=ExtResource("4_lbhrr")]
 position = Vector2(570, 676)
+collision_mask = 2
 
 [node name="Coin16" parent="Coins" unique_id=189757031 instance=ExtResource("4_lbhrr")]
 position = Vector2(277, 709)
+collision_mask = 2
 
 [node name="Coin17" parent="Coins" unique_id=1873620619 instance=ExtResource("4_lbhrr")]
 position = Vector2(278, 806)
+collision_mask = 2
 
 [node name="Coin18" parent="Coins" unique_id=590539946 instance=ExtResource("4_lbhrr")]
 position = Vector2(799, 1193)
+collision_mask = 2
 
 [node name="Coin19" parent="Coins" unique_id=919401803 instance=ExtResource("4_lbhrr")]
 position = Vector2(199, 884)
+collision_mask = 2
 
 [node name="Coin20" parent="Coins" unique_id=1056437883 instance=ExtResource("4_lbhrr")]
 position = Vector2(134, 568)
+collision_mask = 2
 
 [node name="Coin21" parent="Coins" unique_id=967741441 instance=ExtResource("4_lbhrr")]
 position = Vector2(327, 1032)
+collision_mask = 2
 
 [node name="Coin22" parent="Coins" unique_id=1323712925 instance=ExtResource("4_lbhrr")]
 position = Vector2(703, 1045)
+collision_mask = 2
 
 [node name="Coin23" parent="Coins" unique_id=245006485 instance=ExtResource("4_lbhrr")]
 position = Vector2(279, 1033)
+collision_mask = 2
 
 [node name="Coin24" parent="Coins" unique_id=2098971257 instance=ExtResource("4_lbhrr")]
 position = Vector2(783, 1048)
+collision_mask = 2
 
 [node name="Coin25" parent="Coins" unique_id=1412488652 instance=ExtResource("4_lbhrr")]
 position = Vector2(535, 1271)
+collision_mask = 2
 
 [node name="Coin26" parent="Coins" unique_id=1914063950 instance=ExtResource("4_lbhrr")]
 position = Vector2(294, 983)
+collision_mask = 2
 
 [node name="Coin27" parent="Coins" unique_id=2028678935 instance=ExtResource("4_lbhrr")]
 position = Vector2(413, 413)
+collision_mask = 2
 
 [node name="Coin28" parent="Coins" unique_id=160569563 instance=ExtResource("4_lbhrr")]
 position = Vector2(703, 1012)
+collision_mask = 2
 
 [node name="Coin29" parent="Coins" unique_id=1132354215 instance=ExtResource("4_lbhrr")]
 position = Vector2(71, -72)
+collision_mask = 2
 
 [node name="Coin30" parent="Coins" unique_id=2105232577 instance=ExtResource("4_lbhrr")]
 position = Vector2(291, -26)
+collision_mask = 2
 
 [node name="Platforms" type="Node" parent="." unique_id=1061163467]
 
@@ -1082,7 +1112,7 @@ position = Vector2(239, 913)
 [node name="Bats" type="Node" parent="Enemies" unique_id=926942155]
 
 [node name="Bat" parent="Enemies/Bats" unique_id=1186418415 instance=ExtResource("11_dinhu")]
-position = Vector2(555, 143)
+position = Vector2(103, 159)
 
 [node name="Bricks" type="Node" parent="." unique_id=1276646721]
 
@@ -1531,13 +1561,16 @@ shape = SubResource("WorldBoundaryShape2D_kvpfn")
 [node name="InstructionSigns" type="Node" parent="UX" unique_id=1482170779]
 
 [node name="InstructionSign" parent="UX/InstructionSigns" unique_id=1088578647 instance=ExtResource("10_trtic")]
+visible = false
 position = Vector2(168, 152)
 auto_play_anim = "jump_hint"
 
 [node name="InstructionSign2" parent="UX/InstructionSigns" unique_id=660215611 instance=ExtResource("10_trtic")]
+visible = false
 position = Vector2(93, 169)
 
 [node name="InstructionSign3" parent="UX/InstructionSigns" unique_id=1352804885 instance=ExtResource("10_trtic")]
+visible = false
 position = Vector2(424, 153)
 auto_play_anim = "click_hint"
 
@@ -1549,15 +1582,8 @@ fog_to_activate = NodePath("../../../Fog stuff/fog")
 
 [node name="Spring" type="Node" parent="." unique_id=1807222528]
 
-[node name="Spring2" parent="Spring" unique_id=615408050 instance=ExtResource("16_ca42v")]
-position = Vector2(147, 173)
-spring_type = "right"
-
-[node name="Spring" parent="Spring" unique_id=683379308 instance=ExtResource("16_ca42v")]
-position = Vector2(132, 173)
-
 [node name="Spring3" parent="Spring" unique_id=1702348252 instance=ExtResource("16_ca42v")]
-position = Vector2(503, 457)
+position = Vector2(151, 175)
 
 [node name="Clusters" type="Node" parent="." unique_id=388617471]
 

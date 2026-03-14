@@ -16,16 +16,13 @@ var health = 3
 func _ready():
 	if type == BrickType.GEM_CLUSTER:
 		animated_sprite.play("gem_3")
-		# Force Gem Clusters to stay behind the player
 		z_index = -1 
-
 	else:
 		animated_sprite.play("3")
 		z_index = 0
-		# Normal bricks keep their collision (Layer 1)
-		collision_layer = 1
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
+	# Use is_action_pressed to ensure it only triggers ONCE per click
 	if event is InputEventMouseButton and event.is_action_pressed("mine"):
 		if health >= 1:
 			if player == null:
@@ -38,12 +35,13 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 					take_damage()
 
 func take_damage():
+	if health <= 0: return
+
 	health -= 1
+
+	if tap_sound: tap_sound.play()
+	if type == BrickType.GEM_CLUSTER: spawn_gem()
 	
-	if tap_sound:
-		tap_sound.play()
-	if type == BrickType.GEM_CLUSTER:
-		spawn_gem()
 	if health <= 0:
 		handle_break()
 	else:
@@ -56,9 +54,10 @@ func spawn_gem():
 		get_parent().add_child(gem)
 		gem.global_position = global_position
 		
-		# Ensure the gem has these properties
-		gem.velocity = Vector2(randf_range(-70, 70), -220) # Increased upward oomph
-		gem.is_on_floor = false
+		if "is_popped" in gem: 
+			gem.is_popped = true
+		
+		gem.velocity = Vector2(randf_range(-70, 70), -220)
 
 func handle_break():
 	if break_sound:

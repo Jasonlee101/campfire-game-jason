@@ -18,8 +18,10 @@ var empty_heart_rect = Rect2(16, 0 , 16,16)
 @onready var anim_player = $HandPivot/AnimationPlayer
 @onready var timer = $Timer
 @onready var jump_sound = $JumpSound
+@onready var damage_sound = $DamageSound
 @onready var click = $Click
 @onready var slash: AnimatedSprite2D = $Slash
+
 
 func _ready() -> void:
 	current_health = max_health
@@ -28,7 +30,6 @@ func _ready() -> void:
 	# If we have a saved checkpoint position, move the player there immediately
 	if Global.has_checkpoint:
 		global_position = Global.last_checkpoint_pos + Vector2(0, -5)
-		$Camera2D.reset_smoothing()
 		become_invulnerable(2.0)
 
 func _physics_process(delta: float):
@@ -142,7 +143,7 @@ func _handle_directional_mining():
 func become_invulnerable(seconds: float):
 	is_invulnerable = true
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0.3, 0.1)
+	tween.tween_property(self, "modulate:a", 0.0, 0.1)
 	tween.tween_property(self, "modulate:a", 1.0, 0.1)
 	tween.set_loops(int(seconds * 5))
 	
@@ -166,11 +167,12 @@ func play_slash(dir: Vector2):
 	
 	slash.modulate.a = 1.0
 	slash.play("slash")
-	
+
 func take_damage():
 	if dead or is_invulnerable:
 		pass
-
+	damage_sound.play()
+	
 	current_health -= 1
 	update_heart_ui()
 	if current_health <= 0:
