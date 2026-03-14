@@ -11,36 +11,29 @@ var current_slide = 0
 var is_fading = false
 
 func _ready() -> void:
-	if slides.size() > 0:
-		display_slide()
-	else:
-		finished.emit()
+	if slides.size() > 0: display_slide()
+	else: finished.emit()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		advance()
+	if event.is_action_pressed("ui_accept"): advance()
 
 func advance():
-	# 1. NEW CHECK: If we are already on the ending screen, 
-	# block all further input immediately.
-	if current_slide >= slides.size() and is_ending_cutscene:
-		return
-		
+	if current_slide >= slides.size() and is_ending_cutscene: return
 	if is_fading: return
 	is_fading = true
 	
 	SoundFX.play_click()
 	await SceneTransition.fade_out()
-	
 	current_slide += 1
 	
 	if current_slide >= slides.size():
 		if is_ending_cutscene:
 			show_ending_screen()
 		else:
-			await SceneTransition.fade_in() 
+			$TextureRect.hide() 
 			finished.emit()
 			queue_free()
+			await SceneTransition.fade_in() 
 	else:
 		display_slide()
 		await SceneTransition.fade_in()
