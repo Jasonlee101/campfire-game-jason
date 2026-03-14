@@ -1065,39 +1065,14 @@ theme_override_fonts/font = ExtResource("8_gee14")
 theme_override_font_sizes/font_size = 8
 text = "Did you get all  30 gems?"
 
-[node name="HUD" type="CanvasLayer" parent="Labels" unique_id=341817574]
+[node name="UI" type="CanvasLayer" parent="Labels" unique_id=341817574]
 
-[node name="HeartsContainer" type="HBoxContainer" parent="Labels/HUD" unique_id=1651902522]
-offset_left = 906.0
-offset_top = 7.0
-offset_right = 946.0
-offset_bottom = 47.0
-
-[node name="Heart1" type="Sprite2D" parent="Labels/HUD/HeartsContainer" unique_id=1097358283]
-z_index = 101
-scale = Vector2(3, 3)
+[node name="HeartDisplay" type="TextureRect" parent="Labels/UI" unique_id=2048067228]
+offset_left = 664.0
+offset_top = 3.0
+offset_right = 739.0
+offset_bottom = 43.0
 texture = ExtResource("14_264po")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="Heart2" type="Sprite2D" parent="Labels/HUD/HeartsContainer" unique_id=1350011663]
-z_index = 101
-position = Vector2(52, 1)
-scale = Vector2(3, 3)
-texture = ExtResource("14_264po")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="Heart3" type="Sprite2D" parent="Labels/HUD/HeartsContainer" unique_id=451944646]
-z_index = 101
-position = Vector2(104, 1)
-scale = Vector2(3, 3)
-texture = ExtResource("14_264po")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Boundries" type="Node" parent="." unique_id=317817920]
 

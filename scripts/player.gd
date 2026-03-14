@@ -7,6 +7,10 @@ var dead = false
 var swinging = false 
 var direction = 0
 var is_invulnerable = false
+var max_health = 3
+var current_health = 3
+var full_heart_rect = Rect2(0, 0, 16,16)
+var empty_heart_rect = Rect2(16, 0 , 16,16)
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var hand_pivot = $HandPivot
@@ -18,6 +22,8 @@ var is_invulnerable = false
 @onready var slash: AnimatedSprite2D = $Slash
 
 func _ready() -> void:
+	current_health = max_health
+	update_heart_ui()
 	click.top_level = true
 	# If we have a saved checkpoint position, move the player there immediately
 	if Global.has_checkpoint:
@@ -162,3 +168,37 @@ func play_slash(dir: Vector2):
 	
 	slash.modulate.a = 1.0
 	slash.play("slash")
+	
+func take_damage():
+	if dead or is_invulnerable:
+		pass
+	
+	current_health -= 1
+	update_heart_ui()
+	if current_health <= 0:
+		die()
+	else:
+		velocity.y = JUMP_VELOCITY * 0.8
+		become_invulnerable(0.7)
+
+func update_heart_ui():
+	var hearts = [
+		get_node_or_null("../Labels/HUD/HeartsContainer/Heart1"),
+		get_node_or_null("../Labels/HUD/HeartsContainer/Heart2"),
+		get_node_or_null("../Labels/HUD/HeartsContainer/Heart3")
+	]
+	
+	for i in range(len(hearts)):
+		if hearts[i] != null:
+			if current_health > i:
+				hearts[i].region_rect = full_heart_rect
+			else:
+				hearts[i].region_rect = empty_heart_rect
+
+func die():
+	if dead: 
+		return
+	
+	velocity = Vector2.ZERO
+	animated_sprite.play("death")
+	dead = true
