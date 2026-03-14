@@ -3,6 +3,7 @@ extends Area2D
 @onready var cutscene_scene: PackedScene = preload("res://scenes/cutscene.tscn")
 @export var is_ending_trigger: bool = false
 @onready var hint = $InteractionHint
+@onready var end_music = $"end music"
 @export var new_cutscene_slides: Array[Texture2D] = []
 
 var player_in_zone = false

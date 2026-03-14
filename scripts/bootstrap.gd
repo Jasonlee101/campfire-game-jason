@@ -11,7 +11,7 @@ var game_started = false
 func _ready() -> void:
 	var mute_btn = preload("res://scenes/mute.tscn")
 	add_child(mute_btn)
-	$AudioStreamPlayer2D.play()
+	$AudioStreamPlayer.play()
 	if Global.has_finished_intro:
 		load_game_directly()
 	else:
@@ -36,7 +36,8 @@ func _on_menu_dismissed() -> void:
 	SceneTransition.fade_in()
 	
 func _on_cutscene_finished() -> void:
-	$AudioStreamPlayer2D.stop()
+	$AudioStreamPlayer.stop()
+	$Music.play()
 	Global.has_finished_intro = true
 	
 	

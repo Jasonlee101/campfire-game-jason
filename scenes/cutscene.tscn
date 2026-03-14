@@ -101,5 +101,5 @@ position = Vector2(726, 484)
 offset = Vector2(20, 20)
 zoom = Vector2(5, 5)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1128474388]
+[node name="end music" type="AudioStreamPlayer" parent="." unique_id=2064781781]
 stream = ExtResource("7_3ptll")

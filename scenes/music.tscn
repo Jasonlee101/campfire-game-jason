@@ -3,6 +3,6 @@
 [ext_resource type="AudioStream" uid="uid://4n8h8deb6mhc" path="res://assets/music/soundtrack.mp3" id="1_05ggv"]
 [ext_resource type="Script" uid="uid://bloqp37lxpy2o" path="res://scripts/music.gd" id="2_ibx2e"]
 
-[node name="Music" type="AudioStreamPlayer2D" unique_id=1664295360]
+[node name="Music" type="AudioStreamPlayer" unique_id=769316297]
 stream = ExtResource("1_05ggv")
 script = ExtResource("2_ibx2e")
