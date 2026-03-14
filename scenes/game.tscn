@@ -823,7 +823,7 @@ tile_map_data = PackedByteArray("AAAcAB8AAAAJAAAAAAAdAB8AAAAJAAAAAAAbAB8AAAAJAAA
 tile_set = SubResource("TileSet_1kice")
 
 [node name="Player" parent="." unique_id=295882371 instance=ExtResource("1_uwrxv")]
-position = Vector2(336, 2127)
+position = Vector2(59, 168)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=670757176]
 position = Vector2(0, 8)
@@ -1543,6 +1543,7 @@ position = Vector2(503, 457)
 position = Vector2(440, -201)
 
 [node name="FogTrigger" type="Area2D" parent="." unique_id=1040045471 node_paths=PackedStringArray("fog_to_activate")]
+position = Vector2(1, 0)
 collision_mask = 2
 script = ExtResource("15_ir15t")
 fog_to_activate = NodePath("../fog")
