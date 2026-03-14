@@ -819,7 +819,6 @@ scroll_scale = Vector2(1.5, 1.5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Map/Foreground" unique_id=1506979517]
 position = Vector2(-1, 0)
-tile_map_data = PackedByteArray("AAAcAB8AAAAJAAAAAAAdAB8AAAAJAAAAAAAbAB8AAAAJAAAAAAAaAB8AAAAJAAAAAAAaAB4AAAAJAAAAAAAbAB4AAAAJAAAAAAA=")
 tile_set = SubResource("TileSet_1kice")
 
 [node name="Player" parent="." unique_id=295882371 instance=ExtResource("1_uwrxv")]
