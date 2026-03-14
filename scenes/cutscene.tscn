@@ -5,11 +5,82 @@
 [ext_resource type="Texture2D" uid="uid://d3oc558h1l7i3" path="res://assets/sprites/Cutscene/Screen 2.png" id="3_bb0yx"]
 [ext_resource type="Texture2D" uid="uid://du45pndfqdbch" path="res://assets/sprites/Cutscene/Screen 3.png" id="4_3ptll"]
 [ext_resource type="Texture2D" uid="uid://dkxcxetcwmitm" path="res://assets/sprites/Cutscene/Screen 4.png" id="5_d18fx"]
+[ext_resource type="Texture2D" uid="uid://burf07cnns8o8" path="res://assets/sprites/Cutscene/EndScreen.png" id="6_bb0yx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ptll"]
+atlas = ExtResource("6_bb0yx")
+region = Rect2(0, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d18fx"]
+atlas = ExtResource("6_bb0yx")
+region = Rect2(150, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75brc"]
+atlas = ExtResource("6_bb0yx")
+region = Rect2(300, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v50sc"]
+atlas = ExtResource("6_bb0yx")
+region = Rect2(450, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxq4c"]
+atlas = ExtResource("6_bb0yx")
+region = Rect2(600, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q01xw"]
+atlas = ExtResource("6_bb0yx")
+region = Rect2(750, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ury3t"]
+atlas = ExtResource("6_bb0yx")
+region = Rect2(900, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2h23"]
+atlas = ExtResource("6_bb0yx")
+region = Rect2(1050, 0, 150, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ptll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ptll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d18fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75brc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v50sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxq4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q01xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ury3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2h23")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="cutscene" type="CanvasLayer" unique_id=963707756]
 layer = 10
 script = ExtResource("1_edmg7")
 slides = Array[Texture2D]([ExtResource("2_fs8wb"), ExtResource("3_bb0yx"), ExtResource("4_3ptll"), ExtResource("5_d18fx")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1750411689]
+position = Vector2(751.5, 500.99997)
+scale = Vector2(10.033334, 10.039999)
+sprite_frames = SubResource("SpriteFrames_3ptll")
+autoplay = "default"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=92984144]
 anchors_preset = 15

@@ -20,10 +20,10 @@
 [ext_resource type="Script" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bca1w11ysdb3i" path="res://scenes/spring.tscn" id="16_ca42v"]
 [ext_resource type="Script" uid="uid://mc3i8wf2e3p7" path="res://scripts/cutscene_trigger.gd" id="20_1kice"]
-[ext_resource type="Texture2D" uid="uid://dfdwlmuojwfr3" path="res://assets/sprites/cutscene/Screen 5.png" id="21_e1j6l"]
-[ext_resource type="Texture2D" uid="uid://bm2ufpk5b22da" path="res://assets/sprites/cutscene/Screen 6.png" id="22_pl11u"]
-[ext_resource type="Texture2D" uid="uid://ldln23w13bne" path="res://assets/sprites/cutscene/Screen 7.png" id="23_bhx41"]
-[ext_resource type="Texture2D" uid="uid://52ptk0fynpwh" path="res://assets/sprites/cutscene/Screen 8.png" id="24_qnb83"]
+[ext_resource type="Texture2D" uid="uid://dfdwlmuojwfr3" path="res://assets/sprites/Cutscene/Screen 5.png" id="21_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://bm2ufpk5b22da" path="res://assets/sprites/Cutscene/Screen 6.png" id="22_pl11u"]
+[ext_resource type="Texture2D" uid="uid://ldln23w13bne" path="res://assets/sprites/Cutscene/Screen 7.png" id="23_bhx41"]
+[ext_resource type="Texture2D" uid="uid://52ptk0fynpwh" path="res://assets/sprites/Cutscene/Screen 8.png" id="24_qnb83"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rysoc"]
 texture = ExtResource("2_vtaks")
@@ -433,6 +433,7 @@ font_style = 1
 font_weight = 700
 subpixel_positioning = 0
 msdf_pixel_range = 8
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -827,7 +828,7 @@ position = Vector2(336, 2127)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=670757176]
 position = Vector2(0, 8)
 scale = Vector2(2, 2)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(4, 4)
 limit_left = 0
 limit_top = -180
 limit_right = 900
@@ -1539,7 +1540,6 @@ position = Vector2(132, 173)
 position = Vector2(503, 457)
 
 [node name="fog" parent="." unique_id=1504808138 instance=ExtResource("10_vtaks")]
-visible = false
 position = Vector2(440, -201)
 
 [node name="FogTrigger" type="Area2D" parent="." unique_id=1040045471 node_paths=PackedStringArray("fog_to_activate")]
@@ -1554,6 +1554,7 @@ shape = SubResource("RectangleShape2D_ir15t")
 [node name="CutsceneTrigger" type="Area2D" parent="." unique_id=333648090]
 collision_mask = 2
 script = ExtResource("20_1kice")
+is_ending_trigger = true
 new_cutscene_slides = Array[Texture2D]([ExtResource("21_e1j6l"), ExtResource("22_pl11u"), ExtResource("23_bhx41"), ExtResource("24_qnb83")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CutsceneTrigger" unique_id=378052267]

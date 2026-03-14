@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cblwvbceou3k6"]
 
 [ext_resource type="Script" uid="uid://djc3vllrbc4dr" path="res://scripts/menu.gd" id="1_con2f"]
-[ext_resource type="Texture2D" uid="uid://cn6gub68j0tdd" path="res://assets/sprites/Title.png" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://cn6gub68j0tdd" path="res://assets/sprites/Cutscene/Title.png" id="2_mhnvy"]
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_4ytvr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_con2f"]
@@ -66,7 +66,7 @@ position = Vector2(0, 0.99998474)
 scale = Vector2(2.7181818, 2.6891892)
 sprite_frames = SubResource("SpriteFrames_i6lef")
 autoplay = "default"
-frame_progress = 0.2873879
+frame_progress = 0.40164536
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1426685451]
 position = Vector2(1, 1)
