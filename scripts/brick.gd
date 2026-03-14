@@ -18,9 +18,7 @@ func _ready():
 		animated_sprite.play("gem_3")
 		# Force Gem Clusters to stay behind the player
 		z_index = -1 
-		# If you want it to have no physics collision programmatically:
-		collision_layer = 0
-		collision_mask = 0
+
 	else:
 		animated_sprite.play("3")
 		z_index = 0
