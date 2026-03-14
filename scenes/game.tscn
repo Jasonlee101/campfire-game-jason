@@ -14,16 +14,17 @@
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://baqxmao8a610f" path="res://scenes/instruction_sign.tscn" id="10_trtic"]
 [ext_resource type="PackedScene" uid="uid://d1h4yaxvhi6xm" path="res://scenes/fog.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" uid="uid://ktw2lh3tpmte" path="res://scenes/bat.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" path="res://scenes/bat.tscn" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://c0d1lq5i4mg7m" path="res://scripts/scorelabel.gd" id="11_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://dmpil6vb0533q" path="res://assets/sprites/Health.png" id="14_264po"]
-[ext_resource type="Script" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
+[ext_resource type="Script" uid="uid://divd0ypswtjtb" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bca1w11ysdb3i" path="res://scenes/spring.tscn" id="16_ca42v"]
 [ext_resource type="Script" uid="uid://mc3i8wf2e3p7" path="res://scripts/cutscene_trigger.gd" id="20_1kice"]
-[ext_resource type="Texture2D" uid="uid://dfdwlmuojwfr3" path="res://assets/sprites/Cutscene/Screen 5.png" id="21_e1j6l"]
-[ext_resource type="Texture2D" uid="uid://bm2ufpk5b22da" path="res://assets/sprites/Cutscene/Screen 6.png" id="22_pl11u"]
-[ext_resource type="Texture2D" uid="uid://ldln23w13bne" path="res://assets/sprites/Cutscene/Screen 7.png" id="23_bhx41"]
-[ext_resource type="Texture2D" uid="uid://52ptk0fynpwh" path="res://assets/sprites/Cutscene/Screen 8.png" id="24_qnb83"]
+[ext_resource type="PackedScene" uid="uid://cp5drt6vx5xs7" path="res://scenes/music.tscn" id="20_pl11u"]
+[ext_resource type="Texture2D" uid="uid://dfdwlmuojwfr3" path="res://assets/sprites/cutscene/Screen 5.png" id="21_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://bm2ufpk5b22da" path="res://assets/sprites/cutscene/Screen 6.png" id="22_pl11u"]
+[ext_resource type="Texture2D" uid="uid://ldln23w13bne" path="res://assets/sprites/cutscene/Screen 7.png" id="23_bhx41"]
+[ext_resource type="Texture2D" uid="uid://52ptk0fynpwh" path="res://assets/sprites/cutscene/Screen 8.png" id="24_qnb83"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rysoc"]
 texture = ExtResource("2_vtaks")
@@ -1550,6 +1551,8 @@ fog_to_activate = NodePath("../fog")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FogTrigger" unique_id=158823661]
 position = Vector2(240, -3)
 shape = SubResource("RectangleShape2D_ir15t")
+
+[node name="Music" parent="." unique_id=1664295360 instance=ExtResource("20_pl11u")]
 
 [node name="CutsceneTrigger" type="Area2D" parent="." unique_id=333648090]
 collision_mask = 2

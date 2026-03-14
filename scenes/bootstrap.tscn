@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbws8250ejqqd" path="res://scripts/bootstrap.gd" id="1_asbmj"]
 [ext_resource type="PackedScene" uid="uid://bl0echg17budi" path="res://scenes/mute.tscn" id="2_pslgh"]
+[ext_resource type="AudioStream" uid="uid://os1c316wmact" path="res://assets/music/menu music.wav" id="3_yg5h4"]
 
 [node name="bootstrap" type="Node2D" unique_id=737265316]
 script = ExtResource("1_asbmj")
@@ -10,3 +11,6 @@ script = ExtResource("1_asbmj")
 offset = Vector2(1500, 0)
 scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 1500, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1266600456]
+stream = ExtResource("3_yg5h4")

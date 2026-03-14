@@ -4,6 +4,7 @@ signal finished
 
 @onready var animation_player = get_node_or_null("AnimationPlayer")
 @onready var ending_animation = get_node_or_null("AnimatedSprite2D")
+@onready var end_music = $AudioStreamPlayer2D
 @export var slides: Array[Texture2D] = []
 @export var is_ending_cutscene: bool = false
 
@@ -41,8 +42,10 @@ func advance():
 
 func show_ending_screen():
 	$TextureRect.hide()
-	
 	if ending_animation:
+		end_music.play()
+		$"../Music".stop()
+		print("end music")
 		ending_animation.show()
 		ending_animation.play("default")
 	

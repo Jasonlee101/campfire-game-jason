@@ -28,7 +28,6 @@ func _process(_delta):
 		
 func start_interact_cutscene():
 	hint.hide()
-	
 	# 1. TELL SCENE TRANSITION TO IGNORE PAUSE
 	SceneTransition.process_mode = Node.PROCESS_MODE_ALWAYS
 	
