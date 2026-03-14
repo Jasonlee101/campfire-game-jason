@@ -98,10 +98,8 @@ func click_animation(pos = null):
 		# If a specific position was passed (from the mouse click), use it
 		click.global_position = pos
 	elif $MineRay.is_colliding():
-		# If no position was passed, but the RayCast hit something, use that
 		click.global_position = $MineRay.get_collision_point()
 	else:
-		# Fallback just in case
 		click.global_position = get_global_mouse_position()
 		
 	click.play("click")
@@ -158,7 +156,6 @@ func play_slash(dir: Vector2):
 	
 	slash.global_position = final_pos
 	
-	# Orientation Logic
 	if dir.y == 0:
 		slash.rotation = 0
 		slash.flip_h = (dir.x < 0)
@@ -172,7 +169,7 @@ func play_slash(dir: Vector2):
 func take_damage():
 	if dead or is_invulnerable:
 		pass
-	
+
 	current_health -= 1
 	update_heart_ui()
 	if current_health <= 0:
@@ -195,9 +192,6 @@ func update_heart_ui():
 				hearts[i].region_rect = empty_heart_rect
 
 func die():
-	if dead: 
-		return
+	if dead: return
 	dead = true
-	
-
 	animated_sprite.play("death")

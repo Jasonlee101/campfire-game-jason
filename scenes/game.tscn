@@ -14,10 +14,10 @@
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://baqxmao8a610f" path="res://scenes/instruction_sign.tscn" id="10_trtic"]
 [ext_resource type="PackedScene" uid="uid://d1h4yaxvhi6xm" path="res://scenes/fog.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" path="res://scenes/bat.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" uid="uid://ktw2lh3tpmte" path="res://scenes/bat.tscn" id="11_dinhu"]
 [ext_resource type="Script" uid="uid://c0d1lq5i4mg7m" path="res://scripts/scorelabel.gd" id="11_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://dmpil6vb0533q" path="res://assets/sprites/Health.png" id="14_264po"]
-[ext_resource type="Script" uid="uid://divd0ypswtjtb" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
+[ext_resource type="Script" path="res://scripts/fog_trigger.gd" id="15_ir15t"]
 [ext_resource type="PackedScene" uid="uid://bca1w11ysdb3i" path="res://scenes/spring.tscn" id="16_ca42v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rysoc"]
@@ -960,9 +960,9 @@ text = "Avoid enemies!"
 [node name="ScoreLabel" type="Label" parent="Labels/CanvasLayer" unique_id=1532474103]
 z_index = 20
 offset_left = 35.0
-offset_top = 20.0
+offset_top = 92.0
 offset_right = 115.0
-offset_bottom = 50.0
+offset_bottom = 122.0
 scale = Vector2(3, 3)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -1075,6 +1075,7 @@ offset_bottom = 47.0
 
 [node name="Heart1" type="Sprite2D" parent="Labels/HUD/HeartsContainer" unique_id=1097358283]
 z_index = 101
+position = Vector2(-867, 19)
 scale = Vector2(3, 3)
 texture = ExtResource("14_264po")
 centered = false
@@ -1083,7 +1084,7 @@ region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Heart2" type="Sprite2D" parent="Labels/HUD/HeartsContainer" unique_id=1350011663]
 z_index = 101
-position = Vector2(52, 1)
+position = Vector2(-815, 20)
 scale = Vector2(3, 3)
 texture = ExtResource("14_264po")
 centered = false
@@ -1092,7 +1093,7 @@ region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Heart3" type="Sprite2D" parent="Labels/HUD/HeartsContainer" unique_id=451944646]
 z_index = 101
-position = Vector2(104, 1)
+position = Vector2(-763, 20)
 scale = Vector2(3, 3)
 texture = ExtResource("14_264po")
 centered = false

@@ -7,18 +7,20 @@ func _on_body_entered(body):
 		if body.has_method("take_damage"):
 			body.take_damage()
 			
-			if body.global_position.x < global_position.x:
-				body.direction = -1
-			else:
-				body.direction = 1
-
-			body.velocity.y = -300.0
-			body.velocity.x = -200
-			
 			if body.dead:
+				# Set direction for the death fall
+				if body.global_position.x < global_position.x:
+					body.direction = -1
+				else:
+					body.direction = 1
+
+				body.velocity.y = -300.0  # The "jump" you're seeing
+				body.velocity.x = -200    # The horizontal push
+				
 				Engine.time_scale = 0.5
 				death_sound.play()
 				timer.start()
+
 func _on_timer_timeout():
 	await SceneTransition.fade_out()
 	Engine.time_scale = 1
