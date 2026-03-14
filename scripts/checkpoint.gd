@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var fog_to_activate: Area2D
+@export var fog_time_margin: float = 3.0 # How many seconds backward to push the fog when saving!
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var label = $Label
@@ -16,7 +17,7 @@ func _ready():
 		if fog_to_activate != null:
 			var anim_player = fog_to_activate.get_node("AnimationPlayer")
 			if anim_player:
-				anim_player.play("fog down")
+				anim_player.play("fog down") # (Make sure this matches your actual animation name)
 				anim_player.seek(Global.saved_fog_time, true)
 	else:
 		animated_sprite.play("inactive")
@@ -29,10 +30,13 @@ func activate_checkpoint():
 	is_active = true
 	Global.last_checkpoint_pos = global_position
 	Global.has_checkpoint = true
+	
 	if fog_to_activate != null:
 		var anim_player = fog_to_activate.get_node("AnimationPlayer")
 		if anim_player:
-			Global.saved_fog_time = anim_player.current_animation_position
+			# --- THE FIX: Subtract the safe margin from the current time ---
+			# We use max(0.0, ...) so the animation doesn't glitch by going into negative time!
+			Global.saved_fog_time = max(0.0, anim_player.current_animation_position - fog_time_margin)
 			print("Checkpoint! Saving fog at: ", Global.saved_fog_time, " seconds.")
 	
 
@@ -58,11 +62,6 @@ func show_save_message():
 	tween.tween_property(label, "position:y", -70, 1.0).set_trans(Tween.TRANS_SINE)
 	
 	# Fade the label in and then out
-	# Parallel() means "do this at the same time as the movement above"
 	var fade_tween = create_tween()
-	fade_tween.tween_property(label, "modulate:a", 1.0, 0.2) # Fade in quick
-	fade_tween.tween_interval(0.6)                          # Stay visible
-	fade_tween.tween_property(label, "modulate:a", 0.0, 0.2) # Fade out quick
-	
-	# Hide the label when finished so it doesn't block clicks
-	fade_tween.tween_callback(func(): label.visible = false)
+	fade_tween.tween_property(label, "modulate:a", 1.0, 0.2)
+	fade_tween.tween_property(label, "modulate:a", 0.0, 0.5).set_delay(1.5)
