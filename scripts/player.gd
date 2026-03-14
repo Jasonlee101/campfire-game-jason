@@ -28,6 +28,7 @@ func _ready() -> void:
 	# If we have a saved checkpoint position, move the player there immediately
 	if Global.has_checkpoint:
 		global_position = Global.last_checkpoint_pos + Vector2(0, -5)
+		$Camera2D.reset_smoothing()
 		become_invulnerable(2.0)
 
 func _physics_process(delta: float):
