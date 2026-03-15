@@ -76,21 +76,20 @@ position = Vector2(1, 1)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Label" type="Label" parent="." unique_id=800731577]
-visible = false
 layout_mode = 0
-offset_left = -135.0
-offset_top = 142.0
-offset_right = 157.0
-offset_bottom = 165.0
+offset_left = 50.0
+offset_top = 136.0
+offset_right = 220.0
+offset_bottom = 159.0
 theme_override_fonts/font = ExtResource("3_4ytvr")
-text = "CLICK SPACE TO START"
+text = "PRESS START"
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=1394905684]
 layout_mode = 0
-offset_left = -97.0
-offset_top = -186.0
-offset_right = -6.0
-offset_bottom = -155.0
+offset_left = -134.0
+offset_top = 130.0
+offset_right = -43.0
+offset_bottom = 161.0
 focus_mode = 0
 theme = SubResource("Theme_con2f")
 theme_override_fonts/font = ExtResource("3_4ytvr")

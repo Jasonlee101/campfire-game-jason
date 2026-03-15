@@ -23,7 +23,7 @@ func _ready() -> void:
 		finished.emit()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"): advance()
+	if (event is InputEventKey or event is InputEventMouseButton) and event.is_pressed(): advance()
 
 func advance():
 	if current_slide >= slides.size() and is_ending_cutscene: return
