@@ -55,6 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="Theme" id="Theme_con2f"]
+default_font = ExtResource("3_4ytvr")
 
 [node name="menu" type="Control" unique_id=1800608211]
 layout_mode = 3
