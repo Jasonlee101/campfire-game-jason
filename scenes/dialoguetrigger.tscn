@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b28g47m0fcgei"]
+
+[ext_resource type="Texture2D" uid="uid://boa380tutiagw" path="res://assets/sprites/Dialoguebox.png" id="1_605wg"]
+[ext_resource type="Script" uid="uid://ddnnhvk0hirtq" path="res://scripts/dialoguetrigger.gd" id="1_obfp7"]
+[ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_obfp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pehf"]
+size = Vector2(36, 20)
+
+[node name="DialogueTrigger" type="Area2D" unique_id=228821209]
+process_mode = 3
+collision_mask = 2
+script = ExtResource("1_obfp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1135621376]
+shape = SubResource("RectangleShape2D_2pehf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1351116008]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=260099653]
+offset_left = -42.0
+offset_top = -25.0
+offset_right = 58.0
+offset_bottom = 15.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_605wg")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect" unique_id=1845078010]
+layout_mode = 0
+offset_left = 4.333334
+offset_top = 4.6666665
+offset_right = 360.99997
+offset_bottom = 134.66667
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("2_obfp7")

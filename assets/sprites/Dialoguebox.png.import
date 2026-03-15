@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm2ufpk5b22da"
-path="res://.godot/imported/Screen 6.png-3026971cc76841fb16d7c1393ca7fbe9.ctex"
+uid="uid://boa380tutiagw"
+path="res://.godot/imported/Dialoguebox.png-d87def462c8103e7ffec897cf66ee9df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cutscene/Screen 6.png"
-dest_files=["res://.godot/imported/Screen 6.png-3026971cc76841fb16d7c1393ca7fbe9.ctex"]
+source_file="res://assets/sprites/Dialoguebox.png"
+dest_files=["res://.godot/imported/Dialoguebox.png-d87def462c8103e7ffec897cf66ee9df.ctex"]
 
 [params]
 
