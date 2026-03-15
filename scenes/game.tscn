@@ -476,7 +476,7 @@ layer_2/name = "Fore"
 layer_2/z_index = 6
 
 [node name="Player" parent="." unique_id=295882371 instance=ExtResource("1_uwrxv")]
-position = Vector2(72, 142)
+position = Vector2(398, 1666)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=670757176]
 position = Vector2(0, 8)
@@ -1152,6 +1152,9 @@ shape = SubResource("RectangleShape2D_ir15t")
 [node name="spikeball" parent="." unique_id=1270955932 instance=ExtResource("3_37s47")]
 position = Vector2(447, 306)
 spikeball_type = "LeftRight"
+
+[node name="Spring2" parent="." unique_id=615408050 instance=ExtResource("16_ca42v")]
+position = Vector2(326, 1708)
 
 [connection signal="body_entered" from="CutsceneTrigger" to="CutsceneTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="CutsceneTrigger" to="CutsceneTrigger" method="_on_body_exited"]
