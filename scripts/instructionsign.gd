@@ -23,7 +23,6 @@ func _on_body_exited(body):
 func fade_bubble(target_alpha: float):
 	# Create a tween to smoothly change the transparency
 	var tween = create_tween()
-	print('in')
 	tween.tween_property(bubble, "modulate:a", target_alpha, 0.3).set_trans(Tween.TRANS_SINE)
 	
 	# Optional: Make the bubble "float" up/down slightly while visible

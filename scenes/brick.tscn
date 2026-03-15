@@ -274,7 +274,6 @@ stream = ExtResource("4_c34n8")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1854663595]
 libraries/ = SubResource("AnimationLibrary_x7yom")
 
-[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
 [connection signal="ready" from="." to="." method="_on_ready"]

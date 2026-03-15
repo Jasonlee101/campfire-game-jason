@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bewum1vrw0lc8"]
 
 [ext_resource type="Script" uid="uid://b5dh5w0job15c" path="res://scripts/cutscene.gd" id="1_edmg7"]
-[ext_resource type="Texture2D" uid="uid://b72xntlrt74qq" path="res://assets/sprites/cutscene/Screen 1.png" id="2_fs8wb"]
-[ext_resource type="Texture2D" uid="uid://d3oc558h1l7i3" path="res://assets/sprites/cutscene/Screen 2.png" id="3_bb0yx"]
-[ext_resource type="Texture2D" uid="uid://du45pndfqdbch" path="res://assets/sprites/cutscene/Screen 3.png" id="4_3ptll"]
-[ext_resource type="Texture2D" uid="uid://dkxcxetcwmitm" path="res://assets/sprites/cutscene/Screen 4.png" id="5_d18fx"]
-[ext_resource type="Texture2D" uid="uid://burf07cnns8o8" path="res://assets/sprites/cutscene/EndScreen.png" id="6_bb0yx"]
-[ext_resource type="AudioStream" uid="uid://4df8x1k0vro1" path="res://assets/music/end music.wav" id="7_3ptll"]
+[ext_resource type="Texture2D" uid="uid://b72xntlrt74qq" path="res://assets/sprites/Cutscene/Screen 1.png" id="2_fs8wb"]
+[ext_resource type="Texture2D" uid="uid://d3oc558h1l7i3" path="res://assets/sprites/Cutscene/Screen 2.png" id="3_bb0yx"]
+[ext_resource type="Texture2D" uid="uid://du45pndfqdbch" path="res://assets/sprites/Cutscene/Screen 3.png" id="4_3ptll"]
+[ext_resource type="Texture2D" uid="uid://dkxcxetcwmitm" path="res://assets/sprites/Cutscene/Screen 4.png" id="5_d18fx"]
+[ext_resource type="Texture2D" uid="uid://burf07cnns8o8" path="res://assets/sprites/Cutscene/EndScreen.png" id="6_bb0yx"]
+[ext_resource type="AudioStream" uid="uid://c4blrt5f5mbg4" path="res://assets/music/end_music.mp3" id="7_3ptll"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ptll"]
 atlas = ExtResource("6_bb0yx")
@@ -101,5 +101,5 @@ position = Vector2(726, 484)
 offset = Vector2(20, 20)
 zoom = Vector2(5, 5)
 
-[node name="end music" type="AudioStreamPlayer" parent="." unique_id=2064781781]
+[node name="end_music" type="AudioStreamPlayer" parent="." unique_id=2064781781]
 stream = ExtResource("7_3ptll")

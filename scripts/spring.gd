@@ -1,9 +1,10 @@
 extends Area2D
 
 # 1. Choose the look in the inspector
-@export_enum("middle", "left", "right") var spring_type: String = "middle"
+@export_enum("middle") var spring_type: String = "middle"
 @export var vertical_force: float = -400.0
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 
 func _ready():
 	# Set the correct idle animation based on the type
@@ -14,6 +15,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.velocity.y = vertical_force
 		play_boing()
+		jump_sound.play()
 
 func play_boing():
 	# Play the specific boing animation if you have one

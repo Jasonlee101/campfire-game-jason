@@ -4,6 +4,9 @@ signal finished
 
 @onready var animation_player = get_node_or_null("AnimationPlayer")
 @onready var ending_animation = get_node_or_null("AnimatedSprite2D")
+# Reference your end music player
+@onready var end_music = $end_music 
+
 @export var slides: Array[Texture2D] = []
 @export var is_ending_cutscene: bool = false
 
@@ -11,8 +14,13 @@ var current_slide = 0
 var is_fading = false
 
 func _ready() -> void:
-	if slides.size() > 0: display_slide()
-	else: finished.emit()
+	if slides.size() > 0: 
+		display_slide()
+		if is_ending_cutscene and end_music:
+			end_music.volume_db = -20.0 # Start quiet (background level)
+			end_music.play()
+	else: 
+		finished.emit()
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"): advance()
@@ -42,7 +50,12 @@ func advance():
 func show_ending_screen():
 	$TextureRect.hide()
 	if ending_animation:
-		$"end music".play()
+		if not end_music.playing:
+			end_music.play()
+		
+		var tween = create_tween()
+		tween.tween_property(end_music, "volume_db", 0.0, 2.0).set_trans(Tween.TRANS_SINE)
+		
 		ending_animation.show()
 		ending_animation.play("default")
 	

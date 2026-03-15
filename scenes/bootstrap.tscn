@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbws8250ejqqd" path="res://scripts/bootstrap.gd" id="1_asbmj"]
 [ext_resource type="PackedScene" uid="uid://bl0echg17budi" path="res://scenes/mute.tscn" id="2_pslgh"]
-[ext_resource type="AudioStream" uid="uid://os1c316wmact" path="res://assets/music/menu music.wav" id="3_yg5h4"]
+[ext_resource type="AudioStream" uid="uid://rf8o3gqyywre" path="res://assets/music/menu_music.mp3" id="3_ldy74"]
 [ext_resource type="PackedScene" uid="uid://cp5drt6vx5xs7" path="res://scenes/music.tscn" id="4_ldy74"]
 
 [node name="bootstrap" type="Node2D" unique_id=737265316]
@@ -13,7 +13,7 @@ offset = Vector2(1500, 0)
 scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 1500, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1294169077]
-stream = ExtResource("3_yg5h4")
+[node name="menumusic" type="AudioStreamPlayer" parent="." unique_id=1294169077]
+stream = ExtResource("3_ldy74")
 
 [node name="Music" parent="." unique_id=1664295360 instance=ExtResource("4_ldy74")]

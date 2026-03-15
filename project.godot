@@ -21,6 +21,7 @@ buses/default_bus_layout="uid://ck73tko4ccv4v"
 
 [autoload]
 
+Music="*uid://cp5drt6vx5xs7"
 Global="*uid://4lg78jqg7qag"
 SceneTransition="*uid://c7od8s4n5gw0e"
 SoundFX="*uid://dlpvbfgyga54y"
