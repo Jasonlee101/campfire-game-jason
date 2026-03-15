@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1h4yaxvhi6xm"]
 
-[ext_resource type="Script" uid="uid://vw3gs6p3wct6" path="res://scripts/fog.gd" id="1_e072f"]
+[ext_resource type="Script" path="res://scripts/fog.gd" id="1_e072f"]
 [ext_resource type="Texture2D" uid="uid://34y768o2d4uu" path="res://assets/sprites/Fog.png" id="2_1o7ot"]
 [ext_resource type="PackedScene" uid="uid://bmorfmwgd5orj" path="res://scenes/killzone.tscn" id="3_1o7ot"]
 
@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 180),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 230)]
+"values": [Vector2(0, 0), Vector2(0, 269)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -56,7 +56,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 180),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 9), Vector2(0, 239.5)]
+"values": [Vector2(0, 9), Vector2(0, 278.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8fuky"]
