@@ -23,7 +23,7 @@ var empty_heart_rect = Rect2(16, 0 , 16,16)
 @onready var slash: AnimatedSprite2D = $Slash
 
 func _ready() -> void:
-	var settings =Global.get_difficulty_settings() 
+	var settings = Global.get_difficulty_settings() 
 	max_health = settings.hearts
 	current_health = max_health
 	

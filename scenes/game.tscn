@@ -1580,7 +1580,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Heart4" type="Sprite2D" parent="Labels/HUD/HeartsContainer" unique_id=1406042584]
-visible = false
 z_index = 101
 position = Vector2(-711, 20.999998)
 scale = Vector2(3, 3)
@@ -1601,16 +1600,13 @@ shape = SubResource("WorldBoundaryShape2D_kvpfn")
 [node name="InstructionSigns" type="Node" parent="UX" unique_id=1482170779]
 
 [node name="InstructionSign" parent="UX/InstructionSigns" unique_id=1088578647 instance=ExtResource("10_trtic")]
-visible = false
 position = Vector2(168, 152)
 auto_play_anim = "jump_hint"
 
 [node name="InstructionSign2" parent="UX/InstructionSigns" unique_id=660215611 instance=ExtResource("10_trtic")]
-visible = false
 position = Vector2(93, 169)
 
 [node name="InstructionSign3" parent="UX/InstructionSigns" unique_id=1352804885 instance=ExtResource("10_trtic")]
-visible = false
 position = Vector2(424, 153)
 auto_play_anim = "click_hint"
 
