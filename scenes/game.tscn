@@ -1077,12 +1077,6 @@ region_rect = Rect2(0, 0, 16, 16)
 [node name="DialogueTrigger" parent="Labels" unique_id=228821209 instance=ExtResource("16_37s47")]
 position = Vector2(247, -31)
 scale = Vector2(1.3947616, 0.39051586)
-dialogue_text = "Oh dear, the world has fallen
-into a poisonous wasteland.
-Avoid the poisonous gas!
-Quick! Back under
-d the surface!
-"
 
 [node name="Boundries" type="Node" parent="." unique_id=317817920]
 
