@@ -64,8 +64,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_con2f")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1466422956]
-position = Vector2(0, 0.99998474)
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1403871388]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CenterContainer" unique_id=1814549757]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer/Control" unique_id=1466422956]
+position = Vector2(-20, -19.000015)
 scale = Vector2(2.7181818, 2.6891892)
 sprite_frames = SubResource("SpriteFrames_i6lef")
 autoplay = "default"

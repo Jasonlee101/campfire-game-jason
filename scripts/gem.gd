@@ -11,7 +11,8 @@ extends CharacterBody2D
 var being_collected = false
 
 func _physics_process(delta):
-	if being_collected or not is_popped: return
+	if being_collected or not is_popped: 
+		return
 	
 	velocity.y += gem_gravity * delta
 	velocity.x = move_toward(velocity.x, 0, friction * delta)
