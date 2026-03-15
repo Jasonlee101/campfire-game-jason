@@ -17,7 +17,7 @@ func _process(delta):
 		direction = 1
 	if ray_cast_down.is_colliding():
 		direction = -1
-	if spikeball_type:
-		position.x += direction * SPEED * delta 
+	if spikeball_type == "UpDown":
+		position.y += direction * SPEED * delta 
 	else:
 		position.x += direction * SPEED * delta 
