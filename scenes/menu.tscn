@@ -55,7 +55,6 @@ animations = [{
 }]
 
 [sub_resource type="Theme" id="Theme_con2f"]
-default_font = ExtResource("3_4ytvr")
 
 [node name="menu" type="Control" unique_id=1800608211]
 layout_mode = 3
@@ -92,5 +91,4 @@ offset_right = -43.0
 offset_bottom = 161.0
 focus_mode = 0
 theme = SubResource("Theme_con2f")
-theme_override_fonts/font = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 16
