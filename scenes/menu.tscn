@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cblwvbceou3k6"]
 
 [ext_resource type="Script" uid="uid://djc3vllrbc4dr" path="res://scripts/menu.gd" id="1_con2f"]
-[ext_resource type="Texture2D" uid="uid://cn6gub68j0tdd" path="res://assets/sprites/Cutscene/Title.png" id="2_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://cn6gub68j0tdd" path="res://assets/sprites/cutscene/Title.png" id="2_mhnvy"]
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_4ytvr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_con2f"]
@@ -54,6 +54,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Theme" id="Theme_con2f"]
+default_font = ExtResource("3_4ytvr")
+
 [node name="menu" type="Control" unique_id=1800608211]
 layout_mode = 3
 anchors_preset = 0
@@ -73,6 +76,7 @@ position = Vector2(1, 1)
 zoom = Vector2(2.5, 2.5)
 
 [node name="Label" type="Label" parent="." unique_id=800731577]
+visible = false
 layout_mode = 0
 offset_left = -135.0
 offset_top = 142.0
@@ -80,3 +84,13 @@ offset_right = 157.0
 offset_bottom = 165.0
 theme_override_fonts/font = ExtResource("3_4ytvr")
 text = "CLICK SPACE TO START"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1394905684]
+layout_mode = 0
+offset_left = -97.0
+offset_top = -186.0
+offset_right = -6.0
+offset_bottom = -155.0
+theme = SubResource("Theme_con2f")
+theme_override_fonts/font = ExtResource("3_4ytvr")
+theme_override_font_sizes/font_size = 16

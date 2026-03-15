@@ -22,6 +22,8 @@ var empty_heart_rect = Rect2(16, 0 , 16,16)
 @onready var slash: AnimatedSprite2D = $Slash
 
 func _ready() -> void:
+	var settings =Global.get_difficulty_settings() 
+	max_health = settings.hearts
 	current_health = max_health
 	update_heart_ui()
 	click.top_level = true
@@ -30,6 +32,8 @@ func _ready() -> void:
 		global_position = Global.last_checkpoint_pos + Vector2(0, -5)
 		$Camera2D.reset_smoothing()
 		become_invulnerable(2.0)
+	if Global.is_easy:
+		$"../Labels/HUD/HeartsContainer/Heart4".show
 
 func _physics_process(delta: float):
 	if not is_on_floor(): # Add the gravity.
@@ -182,7 +186,8 @@ func update_heart_ui():
 	var hearts = [
 		get_node_or_null("../Labels/HUD/HeartsContainer/Heart1"),
 		get_node_or_null("../Labels/HUD/HeartsContainer/Heart2"),
-		get_node_or_null("../Labels/HUD/HeartsContainer/Heart3")
+		get_node_or_null("../Labels/HUD/HeartsContainer/Heart3"),
+		get_node_or_null("../Labels/HUD/HeartsContainer/Heart4")
 	]
 	
 	for i in range(len(hearts)):

@@ -1519,6 +1519,16 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
+[node name="Heart4" type="Sprite2D" parent="Labels/HUD/HeartsContainer" unique_id=1406042584]
+visible = false
+z_index = 101
+position = Vector2(-711, 20.999998)
+scale = Vector2(3, 3)
+texture = ExtResource("14_264po")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
 [node name="Boundries" type="Node" parent="." unique_id=317817920]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Boundries" unique_id=1943822110]
