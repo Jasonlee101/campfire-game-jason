@@ -15,7 +15,7 @@ func get_difficulty_settings():
 		Difficulty.EASY:
 			is_easy = true
 			return {"hearts": 4, "fog_time": 200.0}
+		Difficulty.NORMAL:
+			return {"hearts": 3, "fog_time": 180.0}
 		Difficulty.HARD:
 			return {"hearts": 3, "fog_time": 157.0}
-		_: # Normal
-			return {"hearts": 3, "fog_time": 180.0}

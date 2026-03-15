@@ -91,6 +91,7 @@ offset_left = -97.0
 offset_top = -186.0
 offset_right = -6.0
 offset_bottom = -155.0
+focus_mode = 0
 theme = SubResource("Theme_con2f")
 theme_override_fonts/font = ExtResource("3_4ytvr")
 theme_override_font_sizes/font_size = 16

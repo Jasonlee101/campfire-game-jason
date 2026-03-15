@@ -26,15 +26,19 @@ func _ready() -> void:
 	var settings =Global.get_difficulty_settings() 
 	max_health = settings.hearts
 	current_health = max_health
+	
+	var heart4 = get_node_or_null("../Labels/HUD/HeartsContainer/Heart4")
+	if heart4 != null:
+		if max_health >= 4:
+			heart4.show()
+		else:
+			heart4.hide()
 	update_heart_ui()
 	click.top_level = true
 	# If we have a saved checkpoint position, move the player there immediately
 	if Global.has_checkpoint:
 		global_position = Global.last_checkpoint_pos + Vector2(0, -5)
 		become_invulnerable(2.0)
-	if Global.is_easy:
-		$"../Labels/HUD/HeartsContainer/Heart4".show
-
 func _physics_process(delta: float):
 	if not is_on_floor(): # Add the gravity.
 		velocity.y += gravity * delta

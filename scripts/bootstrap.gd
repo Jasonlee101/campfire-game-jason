@@ -8,16 +8,13 @@ var menu_instance
 var cutscene_instance
 var game_started = false
 
-@onready var menumusic = $menumusic
-
-
 func _ready() -> void:
 	var mute_btn = preload("res://scenes/mute.tscn")
 	add_child(mute_btn)
 	if Global.has_finished_intro:
 		load_game_directly()
 	else:
-		menumusic.play()
+		$menumusic.play()
 		menu_instance = menu_scene.instantiate() 
 		add_child(menu_instance) 
 		menu_instance.menu_dismissed.connect(_on_menu_dismissed)
@@ -27,8 +24,6 @@ func _on_menu_dismissed() -> void:
 	game_started = true
 	
 	SoundFX.play_click()
-	var tween = create_tween()
-	tween.tween_property(menumusic, "volume_db", -15.0, 1.5)
 	await SceneTransition.fade_out()
 	
 	if is_instance_valid(menu_instance):		
@@ -41,7 +36,7 @@ func _on_menu_dismissed() -> void:
 	SceneTransition.fade_in()
 	
 func _on_cutscene_finished() -> void:
-	menumusic.stop()
+	$menumusic.stop()
 	$Music.play()
 	Global.has_finished_intro = true
 	
