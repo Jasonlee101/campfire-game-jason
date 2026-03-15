@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_obfp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pehf"]
-size = Vector2(36, 20)
+size = Vector2(22.5, 20)
 
 [node name="DialogueTrigger" type="Area2D" unique_id=228821209]
 process_mode = 3
