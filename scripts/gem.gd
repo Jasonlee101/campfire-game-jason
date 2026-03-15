@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var friction = 500.0 # How fast the gem slides to a stop
 @export var is_popped: bool = false 
 
+
 var being_collected = false
 
 func _physics_process(delta):
@@ -17,6 +18,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
+	print("Gem touched by: ", body.name) # Add this
 	if body.is_in_group("player") and not being_collected:
 		collect()
 

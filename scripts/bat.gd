@@ -17,7 +17,6 @@ var direction = -1
 func _physics_process(delta):
 	var player = get_tree().get_first_node_in_group("player")
 	var is_chasing = false
-	
 	if player:
 		var distance = global_position.distance_to(player.global_position)
 		if distance <= chase_range:

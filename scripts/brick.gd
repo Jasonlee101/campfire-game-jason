@@ -5,17 +5,24 @@ enum BrickType { NORMAL, GEM_CLUSTER }
 @export var type: BrickType = BrickType.NORMAL
 @export var gem_scene: PackedScene = preload("res://scenes/gem.tscn")
 @export var interaction_range: float = 40.0
+@export var flip_vertical: bool = false
+@export var disable_collision: bool = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var tap_sound = $TapSound
 @onready var break_sound = $BreakSound
+@onready var collision_shape = $CollisionShape2D
 @onready var player = get_tree().get_first_node_in_group('player')
 
 var health = 3
 
 func _ready():
+	animated_sprite.flip_v = flip_vertical
+	collision_shape.set_deferred("disabled", disable_collision)
+	
 	if type == BrickType.GEM_CLUSTER:
 		animated_sprite.play("gem_3")
+
 	else:
 		animated_sprite.play("3")
 

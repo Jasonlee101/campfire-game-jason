@@ -10,6 +10,8 @@ var direction = -1
 @onready var ray_cast_left = $RayCastLeft
 @onready var animated_sprite = $AnimatedSprite2D
 
+var gem_scene = preload("res://scenes/gem.tscn")
+
 func _process(delta):
 	if ray_cast_right.is_colliding():
 		direction = -1
@@ -43,12 +45,16 @@ func take_damage():
 		tween.tween_property(self, "position:x", position.x + (knock_dir * knockback_force), 0.15).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 
 	flash_white()
-	if health <= 0: die()
+	if health <= 0: 
+		drop_gem()
+		queue_free()
 
 func flash_white():
 	animated_sprite.modulate = Color(10, 10, 10) # Overbright white
 	await get_tree().create_timer(0.1).timeout
 	animated_sprite.modulate = Color.WHITE
 
-func die():
-	queue_free()
+func drop_gem():
+	var gem = gem_scene.instantiate()
+	gem.global_position = global_position
+	get_parent().add_child(gem)
