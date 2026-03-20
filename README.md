@@ -28,4 +28,5 @@ __Credits:__
     - https://hackclub.com/
     - https://itch.io/jam/ember/rate/4335800
     - https://itch.io/jam/ember
+- Game made with godot
 - Made by me and my friend aiden! https://github.com/lima6-tech 
