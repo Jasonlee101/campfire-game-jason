@@ -17,3 +17,11 @@ game preview: <br>
 <img width="315" height="250" alt="Ciiq4R" src="https://github.com/user-attachments/assets/5d3046b5-f6c6-4cdf-b655-159a60a9a173" />
 
 <img width="315" height="250" alt="VB4S93" src="https://github.com/user-attachments/assets/802e9656-f092-4396-ab6d-49bd66705218" />
+
+__Credits:__
+- Music: https://garoslaw.itch.io/monolith-ost
+- Godot Tutorial + coin sound: https://www.youtube.com/watch?v=LOhfqjmasi0&t
+- Submission for hack club ember:
+    - https://hackclub.com/
+    - https://itch.io/jam/ember/rate/4335800
+    - https://itch.io/jam/ember
