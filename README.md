@@ -9,7 +9,7 @@ __controls:__
 - WASD or arrow keys to move and jump
 - alternatively space bar to jump
 - click to break blocks and hit enemies
-- alternatively x and arrow keys to aim to break blocks  + hit enemies  
+- alternatively x and arrow keys to aim to break blocks  + hit enemies  <br>
 __images:__ <br>
 Thumbnail: <br>
 
