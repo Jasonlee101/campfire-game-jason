@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cggr7adig7cwk"
-path="res://.godot/imported/Sparkle.png-af71b748ce4c61ac11d28d7d3d0fffc9.ctex"
+uid="uid://duk2c3ilgane1"
+path="res://.godot/imported/Fly.png-4f1595e7d64d2f0666868878eec1d3be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Effects/Sparkle.png"
-dest_files=["res://.godot/imported/Sparkle.png-af71b748ce4c61ac11d28d7d3d0fffc9.ctex"]
+source_file="res://assets/sprites/Enemies/Fly.png"
+dest_files=["res://.godot/imported/Fly.png-4f1595e7d64d2f0666868878eec1d3be.ctex"]
 
 [params]
 

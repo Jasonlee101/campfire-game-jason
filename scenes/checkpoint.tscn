@@ -1,30 +1,9 @@
 [gd_scene format=3 uid="uid://f2t0ee1sjudd"]
 
 [ext_resource type="Script" uid="uid://cj8rd8cc41gg7" path="res://scripts/checkpoint.gd" id="1_yyywg"]
-[ext_resource type="Texture2D" uid="uid://c0cwq08feng5d" path="res://assets/sprites/Checkpoint/Activation.png" id="2_vsimk"]
 [ext_resource type="Texture2D" uid="uid://bs42qe5caueas" path="res://assets/sprites/Checkpoint/Checkpoint.png" id="3_yqsag"]
 [ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_yqsag"]
 [ext_resource type="AudioStream" uid="uid://dfr85ut2bstrt" path="res://assets/sounds/save.mp3" id="5_c45tw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c45tw"]
-atlas = ExtResource("2_vsimk")
-region = Rect2(38, 0, 38, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_55jpe"]
-atlas = ExtResource("2_vsimk")
-region = Rect2(76, 0, 38, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vc08m"]
-atlas = ExtResource("2_vsimk")
-region = Rect2(114, 0, 38, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tl56q"]
-atlas = ExtResource("2_vsimk")
-region = Rect2(152, 0, 38, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ok2sx"]
-atlas = ExtResource("2_vsimk")
-region = Rect2(190, 0, 38, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0vas"]
 atlas = ExtResource("3_yqsag")
@@ -90,32 +69,8 @@ region = Rect2(532, 0, 38, 48)
 atlas = ExtResource("3_yqsag")
 region = Rect2(570, 0, 38, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tpdg5"]
-atlas = ExtResource("2_vsimk")
-region = Rect2(0, 0, 38, 48)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_c45tw"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c45tw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_55jpe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vc08m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tl56q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ok2sx")
-}],
-"loop": false,
-"name": &"activating",
-"speed": 10.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j0vas")
@@ -168,18 +123,10 @@ animations = [{
 "loop": true,
 "name": &"active",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tpdg5")
-}],
-"loop": false,
-"name": &"inactive",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55jpe"]
-size = Vector2(17, 28)
+size = Vector2(28, 47)
 
 [node name="Checkpoint" type="Area2D" unique_id=189361673]
 collision_mask = 2
@@ -187,11 +134,11 @@ script = ExtResource("1_yyywg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=347312014]
 sprite_frames = SubResource("SpriteFrames_c45tw")
-animation = &"inactive"
-autoplay = "inactive"
+animation = &"active"
+autoplay = "active"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1407089133]
-position = Vector2(0.5, 0)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_55jpe")
 
 [node name="Label" type="Label" parent="." unique_id=345148879]
@@ -210,3 +157,4 @@ position = Vector2(-106, -28)
 stream = ExtResource("5_c45tw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

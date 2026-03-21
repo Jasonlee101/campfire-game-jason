@@ -3,11 +3,10 @@ extends CharacterBody2D
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $AnimatedSprite2D
 
-@export var gem_gravity = 400.0 
-@export var friction = 500.0 # How fast the gem slides to a stop
 @export var is_popped: bool = false 
 
-
+var gem_gravity = 400.0 
+var friction = 500.0 
 var being_collected = false
 
 func _physics_process(delta):

@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://db246t43dahsq"]
+
+[ext_resource type="Script" uid="uid://43aa4j4n1c3e" path="res://scripts/conker.gd" id="1_6kawl"]
+[ext_resource type="Texture2D" uid="uid://cvutcfkhpgrga" path="res://assets/sprites/Enemies/Conker.png" id="2_3aye0"]
+[ext_resource type="PackedScene" uid="uid://bmorfmwgd5orj" path="res://scenes/killzone.tscn" id="3_3aye0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auj2x"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liuxw"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aexij"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25e6x"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htr3a"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j5fh"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flrn5"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrsu3"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkh3n"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kawl"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aye0"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_letdx"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql3yy"]
+atlas = ExtResource("2_3aye0")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auj2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liuxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aexij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25e6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htr3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j5fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flrn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrsu3")
+}],
+"loop": true,
+"name": &"chase",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkh3n")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kawl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aye0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_letdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql3yy")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
+size = Vector2(17, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
+size = Vector2(17.125, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6pvg"]
+size = Vector2(12, 12)
+
+[node name="Conker" type="CharacterBody2D" unique_id=1237715612]
+collision_layer = 8
+input_pickable = true
+script = ExtResource("1_6kawl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=259293392]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_v5wyi")
+animation = &"chase"
+autoplay = "chase"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=929225934]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=386538799]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_pjw23")
+
+[node name="Killzone" parent="." unique_id=1035503713 instance=ExtResource("3_3aye0")]
+position = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=405162242]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0l8pv")
+
+[node name="RayCast" type="RayCast2D" parent="." unique_id=654955201]
+position = Vector2(0, -6)
+target_position = Vector2(11, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117576651]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_n6pvg")
+
+[node name="PlayerDetector" type="RayCast2D" parent="." unique_id=1673633447]
+position = Vector2(0, -5)
+target_position = Vector2(150, 0)
+collision_mask = 3
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

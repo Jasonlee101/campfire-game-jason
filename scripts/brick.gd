@@ -27,7 +27,6 @@ func _ready():
 		animated_sprite.play("3")
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
-	# Use is_action_pressed to ensure it only triggers ONCE per click
 	if event is InputEventMouseButton and event.is_action_pressed("mine"):
 		if health >= 1:
 			if player == null:

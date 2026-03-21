@@ -20,12 +20,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		_on_start_pressed()
 
 func _process(delta: float) -> void:
-	# Make sure "Start" is mapped in your Input Map (Project -> Project Settings -> Input Map)
 	if Input.is_action_just_pressed("Start"):
 		_on_start_pressed()
 
 func _on_start_pressed() -> void:
-	print("Starting game...") # Debug check 
 	emit_signal("menu_dismissed")
 
 func _on_difficulty_changed(index: int) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbod25j5bvf7x"
-path="res://.godot/imported/Spike.png-b67a991c349ebe46e5bf4fca649d5aca.ctex"
+uid="uid://cvutcfkhpgrga"
+path="res://.godot/imported/Conker.png-67ef8d962312f253ce5a06e526f6f4d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Spike.png"
-dest_files=["res://.godot/imported/Spike.png-b67a991c349ebe46e5bf4fca649d5aca.ctex"]
+source_file="res://assets/sprites/Enemies/Conker.png"
+dest_files=["res://.godot/imported/Conker.png-67ef8d962312f253ce5a06e526f6f4d6.ctex"]
 
 [params]
 
