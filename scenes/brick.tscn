@@ -248,8 +248,8 @@ _data = {
 &"break": SubResource("Animation_ci8dj")
 }
 
-[node name="Brick" type="StaticBody2D" unique_id=1621851373]
-collision_mask = 3
+[node name="Brick" type="StaticBody2D" unique_id=1621851373 groups=["bricks"]]
+collision_layer = 9
 script = ExtResource("2_0w5h4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=977438496]

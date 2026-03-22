@@ -143,15 +143,21 @@ func perform_slash():
 			slash.flip_h = false
 
 	slash_detector.position = slash.position
-
 	slash_detector.force_shapecast_update()
+
 	if slash_detector.is_colliding():
-		apply_recoil(slash_dir)
+		var should_recoil = false
 
 		for i in range(slash_detector.get_collision_count()):
 			var target = slash_detector.get_collider(i)
+			if not target.is_in_group("bricks"):
+				should_recoil = true
+			
 			if target.has_method("take_damage"):
 				target.take_damage(1, global_position)
+
+		if should_recoil:
+			apply_recoil(slash_dir)
 
 func apply_recoil(dir: Vector2):
 	if dir == Vector2.DOWN:
@@ -191,13 +197,19 @@ func spawn_player_hit_effects():
 	for side in [-1, 1]:
 		for i in range(2):
 			var slash = SLASH_SCENE.instantiate()
-			get_parent().add_child(slash)
-			
-			var offset = Vector2(side * randf_range(5, 10), randf_range(-5, 5))
+			get_tree().current_scene.add_child(slash)
+			var offset = Vector2(side * randf_range(4, 8), randf_range(-4, 4))
 			slash.global_position = center + offset
-			
 			if slash.has_method("setup_slash"):
-				print('slash')
+				slash.setup_slash(offset, Color.WHITE)
+
+	for side in [-1, 1]:
+		for i in range(2):
+			var slash = SLASH_SCENE.instantiate()
+			get_tree().current_scene.add_child(slash)
+			var offset = Vector2(side * randf_range(6, 12), randf_range(-6, 6))
+			slash.global_position = center + offset
+			if slash.has_method("setup_slash"):
 				slash.setup_slash(offset, Color.BLACK)
 
 func become_invulnerable(seconds: float):

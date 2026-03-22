@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var menu_scene: PackedScene = preload("res://scenes/menu.tscn")
-@onready var game_scene: PackedScene = preload("res://scenes/game.tscn")
+@onready var game_scene: PackedScene = preload("res://scenes/game.scn")
 @onready var cutscene_scene: PackedScene = preload("res://scenes/cutscene.tscn")
 
 var menu_instance

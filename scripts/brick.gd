@@ -26,19 +26,7 @@ func _ready():
 	else:
 		animated_sprite.play("3")
 
-func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
-	if event is InputEventMouseButton and event.is_action_pressed("mine"):
-		if health >= 1:
-			if player == null:
-				player = get_tree().get_first_node_in_group("player")
-			
-			if player != null:
-				var distance = global_position.distance_to(player.global_position)
-				if distance <= interaction_range:
-					player.click_animation(get_global_mouse_position())
-					take_damage()
-
-func take_damage():
+func take_damage(amount: int, source_position: Vector2):
 	if health <= 0: return
 
 	health -= 1

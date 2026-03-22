@@ -2,8 +2,8 @@ extends Enemy
 
 func _init():
 	speed = 60.0
-	health = 5
-	gem_count = 3
+	health = 3
+	gem_count = 1
 
 func handle_behavior(_delta):
 	if is_on_wall() or ray_cast.is_colliding():

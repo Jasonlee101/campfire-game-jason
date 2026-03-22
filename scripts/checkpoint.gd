@@ -6,6 +6,7 @@ extends Area2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var label = $Label
 @onready var save_sound = $SaveSound
+@onready var prompt_label = $prompt_label
 
 var is_active = false
 var player_in_range = false
@@ -27,13 +28,20 @@ func _ready():
 	else:
 		animated_sprite.play("active") 
 
+	prompt_label.modulate.a = 0.0
+	prompt_label.visible = true 
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = true
+		var tween = create_tween()
+		tween.tween_property(prompt_label, "modulate:a", 1.0, 0.3).set_trans(Tween.TRANS_SINE)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
+		var tween = create_tween()
+		tween.tween_property(prompt_label, "modulate:a", 0.0, 0.2).set_trans(Tween.TRANS_SINE)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if player_in_range and event.is_action_pressed("interact"): 

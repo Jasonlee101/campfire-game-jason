@@ -156,5 +156,15 @@ horizontal_alignment = 1
 position = Vector2(-106, -28)
 stream = ExtResource("5_c45tw")
 
+[node name="prompt_label" type="Label" parent="." unique_id=1385176965]
+visible = false
+offset_left = -24.0
+offset_top = -34.0
+offset_right = 28.0
+offset_bottom = -18.0
+theme_override_fonts/font = ExtResource("4_yqsag")
+theme_override_font_sizes/font_size = 8
+text = "Press Z"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

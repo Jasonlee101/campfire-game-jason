@@ -41,6 +41,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 player=""
 fog=""
+bricks=""
 
 [input]
 

@@ -344,6 +344,7 @@ animations = [{
 }]
 
 [node name="InstructionSign" type="Area2D" unique_id=1088578647]
+z_index = 1
 collision_mask = 2
 script = ExtResource("1_rtkhm")
 
