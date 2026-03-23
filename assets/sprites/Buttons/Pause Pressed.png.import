@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ft426gei6ywm"
-path="res://.godot/imported/Mushrooms.png-28c64940cc54f0dc194de8e125c76778.ctex"
+uid="uid://85rlef7kvao6"
+path="res://.godot/imported/Pause Pressed.png-3e1efaab04ca6b27eab73915c0bc3fc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Tiles/Mushrooms.png"
-dest_files=["res://.godot/imported/Mushrooms.png-28c64940cc54f0dc194de8e125c76778.ctex"]
+source_file="res://assets/sprites/Buttons/Pause Pressed.png"
+dest_files=["res://.godot/imported/Pause Pressed.png-3e1efaab04ca6b27eab73915c0bc3fc1.ctex"]
 
 [params]
 

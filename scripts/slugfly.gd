@@ -4,7 +4,7 @@ extends Enemy
 func _init():
 	gravity = 0 
 	speed = 60.0 
-	health = 30
+	health = 5 
 	recoil = 150
 
 func _ready():

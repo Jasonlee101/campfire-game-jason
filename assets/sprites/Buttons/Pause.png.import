@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u3g612rkola3"
-path="res://.godot/imported/Unmute.png-3432a01dabed029a2770d16b9ccfd4a1.ctex"
+uid="uid://cqvp4jgx114af"
+path="res://.godot/imported/Pause.png-4dc16711b7d6e4a6393ea62ebea8f2b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Mute/Unmute.png"
-dest_files=["res://.godot/imported/Unmute.png-3432a01dabed029a2770d16b9ccfd4a1.ctex"]
+source_file="res://assets/sprites/Buttons/Pause.png"
+dest_files=["res://.godot/imported/Pause.png-4dc16711b7d6e4a6393ea62ebea8f2b5.ctex"]
 
 [params]
 

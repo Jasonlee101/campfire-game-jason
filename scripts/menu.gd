@@ -14,7 +14,7 @@ func _ready() -> void:
 	difficulty_selector.item_selected.connect(_on_difficulty_changed)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if (event is InputEventKey or event is InputEventMouseButton) and event.is_pressed():
+	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
 		_on_start_pressed()
 
 func _process(delta: float) -> void:

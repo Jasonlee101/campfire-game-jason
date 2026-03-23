@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dulo0ngvlnmey"]
+
+[ext_resource type="Script" uid="uid://c4mphhejueovn" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://b007ualmmv331" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://v5bq1872urti" path="res://assets/sprites/Buttons/Mute.png" id="3_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://cbumflxxan45w" path="res://assets/sprites/Buttons/Unmute.png" id="4_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://b1hv1xw3pbcju" path="res://assets/sprites/Buttons/Resumed.png" id="5_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://qt87vy7u8c4k" path="res://assets/sprites/Buttons/Resumed Pressed.png" id="6_1s2dm"]
+
+[node name="Pause_Menu" type="CanvasLayer" unique_id=1522327285]
+process_mode = 3
+script = ExtResource("1_n87rw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1933104910]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.9985104)
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="Label" type="Label" parent="." unique_id=1589045271]
+offset_left = 545.0
+offset_top = 398.0
+offset_right = 929.0
+offset_bottom = 529.0
+theme_override_fonts/font = ExtResource("2_5d2l8")
+theme_override_font_sizes/font_size = 64
+text = "Paused
+"
+
+[node name="Mute" type="TextureButton" parent="." unique_id=614858946]
+offset_left = 809.0
+offset_top = 506.99997
+offset_right = 849.0
+offset_bottom = 547.0
+scale = Vector2(5, 5)
+toggle_mode = true
+texture_normal = ExtResource("4_v4r4p")
+texture_pressed = ExtResource("3_7l7mv")
+
+[node name="Resume" type="TextureButton" parent="." unique_id=19128141]
+offset_left = 545.0
+offset_top = 508.0
+offset_right = 595.0
+offset_bottom = 548.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("5_v4r4p")
+texture_pressed = ExtResource("6_1s2dm")

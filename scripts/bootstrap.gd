@@ -9,9 +9,6 @@ var cutscene_instance
 var game_started = false
 
 func _ready() -> void:
-	var mute_btn = preload("res://scenes/mute.tscn")
-	add_child(mute_btn)
-
 	if Global.has_finished_intro:
 		load_game_directly()
 	else:

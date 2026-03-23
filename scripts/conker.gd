@@ -12,7 +12,7 @@ var chase_timer = 0.0
 @onready var player_detector = $PlayerDetector
 
 func _init():
-	speed = 30.0
+	speed = 20.0
 	health = 5
 	recoil = 30
 	recoil_timer_length = 0.01

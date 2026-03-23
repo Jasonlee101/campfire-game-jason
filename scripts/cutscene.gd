@@ -4,7 +4,6 @@ signal finished
 
 @onready var animation_player = get_node_or_null("AnimationPlayer")
 @onready var ending_animation = get_node_or_null("AnimatedSprite2D")
-# Reference your end music player
 @onready var end_music = $end_music 
 
 @export var slides: Array[Texture2D] = []
@@ -23,7 +22,8 @@ func _ready() -> void:
 		finished.emit()
 
 func _input(event):
-	if (event is InputEventKey or event is InputEventMouseButton) and event.is_pressed(): advance()
+	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+		advance()
 
 func advance():
 	if current_slide >= slides.size() and is_ending_cutscene: return
