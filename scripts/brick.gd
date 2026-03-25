@@ -18,11 +18,9 @@ var health = 3
 
 func _ready():
 	animated_sprite.flip_v = flip_vertical
-	collision_shape.set_deferred("disabled", disable_collision)
 	
 	if type == BrickType.GEM_CLUSTER:
 		animated_sprite.play("gem_3")
-
 	else:
 		animated_sprite.play("3")
 

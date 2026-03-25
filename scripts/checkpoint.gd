@@ -47,7 +47,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if player_in_range and event.is_action_pressed("interact"): 
 		activate_checkpoint()
 		if SceneTransition.has_method("white_flash"):
-			print('flash')
 			SceneTransition.white_flash()
 		flash_white()
 

@@ -14,5 +14,3 @@ func _ready():
 
 	if sprite_frames.has_animation(anim_name):
 		play(anim_name)
-	else:
-		print("Warning: Animation ", anim_name, " not found!")

@@ -35,10 +35,12 @@ scale = Vector2(2.5, 2.5)
 theme_override_fonts/font = ExtResource("2_obfp7")
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=888993374]
-offset_left = 893.0
-offset_top = 860.0
-offset_right = 997.0
-offset_bottom = 883.0
+texture_filter = 1
+offset_left = 995.0
+offset_top = 851.0
+offset_right = 1099.0
+offset_bottom = 874.0
 scale = Vector2(4, 4)
 theme_override_fonts/font = ExtResource("2_obfp7")
+theme_override_font_sizes/font_size = 12
 text = "press z"

@@ -1,7 +1,7 @@
 extends Enemy
 
 @export_group("Conker Behavior")
-@export var chase_speed = 120.0
+@export var chase_speed = 100.0
 @export var chase_timeout = 3.0
 @export var skid_duration = 0.5
 

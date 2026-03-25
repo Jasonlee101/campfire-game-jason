@@ -9,6 +9,9 @@ signal finished
 @export var slides: Array[Texture2D] = []
 @export var is_ending_cutscene: bool = false
 
+@onready var time_label = $TimeLabel
+@onready var score_label = $ScoreLabel
+
 var current_slide = 0
 var is_fading = false
 
@@ -22,7 +25,7 @@ func _ready() -> void:
 		finished.emit()
 
 func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+	if Input.is_action_just_pressed("Start"):
 		advance()
 
 func advance():
@@ -56,11 +59,25 @@ func show_ending_screen():
 		var tween = create_tween()
 		tween.tween_property(end_music, "volume_db", 0.0, 2.0).set_trans(Tween.TRANS_SINE)
 		
+		Global.run_completed = true
+		var is_new_record = Global.time_elapsed < Global.high_score_time
+		Global.save_highscore()
+		
+		score_label.text = "Gems Collected: " + str(Global.saved_gems)
+		time_label.text = "Time: " + Global.get_time_string()
+		score_label.show()
+		time_label.show()
+
 		ending_animation.show()
 		ending_animation.play("default")
-	
+
 	await SceneTransition.fade_in()
 	is_fading = false
+
+func _format_time(t: float) -> String:
+	var minutes = int(t / 60)
+	var seconds = int(t) % 60
+	return "%02d:%02d" % [minutes, seconds]
 
 func display_slide():
 	$TextureRect.texture = slides[current_slide]

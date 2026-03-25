@@ -93,9 +93,10 @@ offset_top = 136.0
 offset_right = 166.0
 offset_bottom = 159.0
 theme_override_fonts/font = ExtResource("3_4ytvr")
-text = "PRESS START"
+text = "PRESS SPACE"
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=1394905684]
+texture_filter = 1
 layout_mode = 0
 offset_left = -155.0
 offset_top = 130.0

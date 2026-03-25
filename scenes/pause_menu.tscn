@@ -48,3 +48,5 @@ offset_bottom = 548.0
 scale = Vector2(5, 5)
 texture_normal = ExtResource("5_v4r4p")
 texture_pressed = ExtResource("6_1s2dm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=965721486]

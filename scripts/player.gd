@@ -30,7 +30,6 @@ var empty_heart_rect = Rect2(16, 0, 16, 16)
 const SLASH_SCENE = preload("res://scenes/slash_mark.tscn")
 
 func _ready() -> void:
-	Global.god_mode_toggled.connect(_on_god_mode_toggled)
 	var settings = Global.get_difficulty_settings() 
 	max_health = settings.hearts
 	current_health = max_health 
@@ -40,8 +39,8 @@ func _ready() -> void:
 
 	update_heart_ui()
 
-func _on_god_mode_toggled(enabled: bool):
-	modulate = Color(2.0, 1.7, 0.0) if enabled else Color(1, 1, 1)
+	Global.god_mode_toggled.connect(_on_god_mode_toggled)
+	Global.request_teleport.connect(_on_teleport_requested)
 
 func _physics_process(delta: float):
 	if dead:
@@ -116,7 +115,6 @@ func perform_slash():
 
 	if input_v > 0.5:
 		animated_sprite.play("slash_down")
-		print("down")
 	elif input_h != 0:
 		animated_sprite.play("slash_move")
 	else:
@@ -235,3 +233,15 @@ func update_heart_ui():
 func die():
 	dead = true
 	animated_sprite.play("death")
+
+func _on_god_mode_toggled(enabled: bool):
+	modulate = Color(2.0, 1.7, 0.0) if enabled else Color(1, 1, 1)
+
+func _on_teleport_requested(id: int):
+	var checkpoint_name = "Checkpoint" + str(id)
+	var target = get_tree().current_scene.find_child(checkpoint_name, true, false)
+	if target:
+		global_position = target.global_position
+		print("Teleported to: ", target.name)
+	else:
+		print("Checkpoint ", id, " not found in this level!")

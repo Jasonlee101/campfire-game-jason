@@ -31,7 +31,6 @@ SoundFX="*uid://dlpvbfgyga54y"
 window/size/viewport_width=1500
 window/size/viewport_height=1000
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 

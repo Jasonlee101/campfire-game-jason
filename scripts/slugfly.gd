@@ -6,6 +6,7 @@ func _init():
 	speed = 60.0 
 	health = 5 
 	recoil = 150
+	gem_count = 2
 
 func _ready():
 	var starting_dir = Vector2(1.5, 1).normalized()
