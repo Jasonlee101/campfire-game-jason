@@ -228,7 +228,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"land",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -323,8 +323,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
-size = Vector2(12, 12)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
 atlas = ExtResource("6_fjrip")
@@ -407,14 +407,14 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=549937233]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"slash_down"
+animation = &"land"
 autoplay = "idle"
-frame = 4
+frame = 2
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265038417 groups=["player"]]
 position = Vector2(0, -6)
-shape = SubResource("RectangleShape2D_fjrip")
+shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="Slash" type="AnimatedSprite2D" parent="." unique_id=1406106026]
 position = Vector2(0, -8)
