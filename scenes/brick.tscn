@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cnjhefweth244" path="res://assets/sprites/Brick.png" id="2_c34n8"]
 [ext_resource type="AudioStream" uid="uid://5n72javh0m0k" path="res://assets/sounds/tap.wav" id="3_7mekc"]
 [ext_resource type="Texture2D" uid="uid://b00nlcn7q52xo" path="res://assets/sprites/Gem cluster.png" id="3_ci8dj"]
-[ext_resource type="AudioStream" uid="uid://3v3e6irr62tx" path="res://assets/sounds/hurt.wav" id="4_c34n8"]
+[ext_resource type="AudioStream" uid="uid://dvb102jf6cbkg" path="res://assets/sounds/explosion.wav" id="5_ci8dj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4w1"]
 size = Vector2(16, 16)
@@ -269,7 +269,7 @@ stream = ExtResource("3_7mekc")
 volume_db = 8.0
 
 [node name="BreakSound" type="AudioStreamPlayer2D" parent="." unique_id=942988150]
-stream = ExtResource("4_c34n8")
+stream = ExtResource("5_ci8dj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1854663595]
 libraries/ = SubResource("AnimationLibrary_x7yom")
