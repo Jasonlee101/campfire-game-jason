@@ -1,7 +1,7 @@
 extends Node2D
 
 @export_enum("UpDown", "LeftRight", "Still") var spikeball_type: String = "UpDown"
-const SPEED = 60
+@export var SPEED = 60
 
 var direction = -1
 @onready var ray_cast_1 = $RayCast1
