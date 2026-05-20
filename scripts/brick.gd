@@ -9,10 +9,12 @@ enum BrickType { NORMAL, GEM_CLUSTER }
 @export var disable_collision: bool = false
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var animation_player = $AnimationPlayer
 @onready var tap_sound = $TapSound
 @onready var break_sound = $BreakSound
 @onready var collision_shape = $CollisionShape2D
 @onready var player = get_tree().get_first_node_in_group('player')
+
 
 var health = 3
 
@@ -50,14 +52,5 @@ func spawn_gem():
 		gem.velocity = Vector2(randf_range(-70, 70), -220)
 
 func handle_break():
-	if break_sound:
-		break_sound.play()
-	
-	if $Area2D != null:
-		$Area2D.queue_free()
-	
-	var break_anim = "gem_break" if type == BrickType.GEM_CLUSTER else "break"
-	animated_sprite.play(break_anim)
-
-	await animated_sprite.animation_finished
-	queue_free()
+	animated_sprite.play("break")
+	animation_player.play("break")

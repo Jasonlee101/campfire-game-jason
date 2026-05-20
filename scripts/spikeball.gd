@@ -17,11 +17,11 @@ func _ready():
 	ray_cast_2.enabled = true
 	
 	if spikeball_type == "LeftRight":
-		ray_cast_1.target_position = Vector2(-15, 0)
-		ray_cast_2.target_position = Vector2(15, 0)
+		ray_cast_1.target_position = Vector2(-10, 0)
+		ray_cast_2.target_position = Vector2(10, 0)
 	elif spikeball_type == "UpDown":
-		ray_cast_1.target_position = Vector2(0, -15)
-		ray_cast_2.target_position = Vector2(0, 15)
+		ray_cast_1.target_position = Vector2(0, -10)
+		ray_cast_2.target_position = Vector2(0, 10)
 
 func _process(delta):
 	if spikeball_type == "Still":

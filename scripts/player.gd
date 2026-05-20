@@ -21,6 +21,8 @@ var normal_recoil = 250.0
 var full_heart_rect = Rect2(0, 0, 16, 16)
 var empty_heart_rect = Rect2(16, 0, 16, 16)
 
+var launch_timer: float = 0.0
+
 @onready var slash = $Slash
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var slash_detector = $SlashDetector
@@ -82,10 +84,13 @@ func _physics_process(delta: float):
 		else:
 			animated_sprite.play("run")
 
-	if direction:
-		velocity.x = direction * SPEED
+	if launch_timer > 0:
+		launch_timer -= delta
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 
@@ -245,3 +250,14 @@ func _on_teleport_requested(id: int):
 		print("Teleported to: ", target.name)
 	else:
 		print("Checkpoint ", id, " not found in this level!")
+
+func apply_spring_launch(boost: Vector2):
+	if dead: return 
+	
+	velocity = boost
+	launch_timer = 0.3
+	knockback_timer = 0.0
+	is_hurting = false
+
+	if animated_sprite:
+		animated_sprite.play("jump")

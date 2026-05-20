@@ -11,20 +11,17 @@ size = Vector2(10, 10)
 script = ExtResource("1_4u78d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1627658424]
-position = Vector2(0, -12)
 texture = ExtResource("3_bv5hd")
 
 [node name="Killzone" parent="." unique_id=1035503713 instance=ExtResource("3_17kw6")]
-position = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=405162242]
+position = Vector2(0, -2.3841858e-07)
 scale = Vector2(1.3090025, 1.342615)
 shape = SubResource("RectangleShape2D_0l8pv")
 
 [node name="RayCast1" type="RayCast2D" parent="." unique_id=654955201]
-position = Vector2(0, -9)
-target_position = Vector2(0, -11)
+target_position = Vector2(0, -4)
 
 [node name="RayCast2" type="RayCast2D" parent="." unique_id=2075641524]
-position = Vector2(0, -7)
-target_position = Vector2(0, 3)
+target_position = Vector2(0, 4)
